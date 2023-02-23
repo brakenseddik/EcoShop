@@ -12,7 +12,7 @@ part 'app_state.dart';
 class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc(this.spService) : super(AppState.initial()) {
     on<OnCheckSeenCalled>(_onOpened);
-    on<OnSeenUpdated>(_onBoardingSeen);
+    on<OnSeenUpdated>(_onSeenUpdated);
   }
   final SharedPreferencesService spService;
 
@@ -26,7 +26,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     }
   }
 
-  FutureOr<void> _onBoardingSeen(
+  FutureOr<void> _onSeenUpdated(
       OnSeenUpdated event, Emitter<AppState> emit) async {
     await spService.setBoolean(AppKeys.onBoardingSeen, true);
     emit(state.copyWith(isSeen: true));
