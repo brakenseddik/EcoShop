@@ -38,7 +38,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(isLoading: true));
     final res = await authUseCases.register(
         email: event.email, password: event.password);
-    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
+    emit(state.copyWith(isLoading: false, registerSuccessOrFailure: some(res)));
   }
 
   FutureOr<void> _onIsVerified(IsVerified event, Emitter<AuthState> emit) {

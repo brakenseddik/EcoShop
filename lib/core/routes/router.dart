@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:fake_store/features/auth/presentation/pages/congrats_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/login_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/register_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/verify_page.dart';
@@ -33,6 +34,10 @@ part 'router.gr.dart';
     AutoRoute<void>(
       path: '/verify',
       page: VerifyPage,
+    ),
+    AutoRoute<void>(
+      path: '/congrats',
+      page: CongratsVerificationPage,
     ),
     RedirectRoute(path: '*', redirectTo: '/'),
   ],

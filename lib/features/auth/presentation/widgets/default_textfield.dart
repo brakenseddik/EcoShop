@@ -8,12 +8,14 @@ class DefaultTextField2 extends StatelessWidget {
       required this.label,
       required this.hint,
       required this.validator,
-      required this.iconData});
+      required this.iconData,
+      this.isObscure});
 
   final TextEditingController controller;
   final String label;
   final String hint;
   final IconData iconData;
+  final bool? isObscure;
   final String? Function(String?)? validator;
 
   @override
@@ -26,6 +28,7 @@ class DefaultTextField2 extends StatelessWidget {
           controller: controller,
           validator: validator,
           enabled: true,
+          obscureText: isObscure ?? false,
           decoration: InputDecoration(
               // isDense: true,
               contentPadding: EdgeInsets.zero,

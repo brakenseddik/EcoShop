@@ -30,6 +30,7 @@ dependencies:
   firebase_auth: ^4.2.6
   shimmer:
   shared_preferences:
+  fluttertoast:
 
   
   

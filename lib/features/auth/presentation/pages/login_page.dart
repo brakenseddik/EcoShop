@@ -1,8 +1,8 @@
-import 'dart:developer';
-
+import 'package:auto_route/auto_route.dart';
 import 'package:fake_store/core/extensions/context_extensions.dart';
 import 'package:fake_store/core/resources/assets_manager.dart';
 import 'package:fake_store/core/resources/values_manager.dart';
+import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/core/components/logo_widget.dart';
 import 'package:fake_store/features/core/components/signin_form.dart';
@@ -23,21 +23,11 @@ class _LoginPageState extends State<LoginPage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
-        listenWhen: (p, c) {
-          return p.error != c.error;
-        },
-        listener: (context, state) {
-          if (state.error != null) {
-            log(state.error.toString());
-          }
-        },
+        listener: (context, state) {},
         buildWhen: (p, c) {
-          return p.isLoading != c.isLoading;
+          return false;
         },
         builder: (context, state) {
-          if (state.isLoading) {
-            return const Center(child: CircularProgressIndicator());
-          }
           return Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: ValuesManager.s32, vertical: ValuesManager.s64),
@@ -56,13 +46,11 @@ class _LoginPageState extends State<LoginPage> {
                   height: ValuesManager.s16,
                 ),
                 Text(
-                  'Enter your email and password to access your account or use one of the social logins listed below.',
+                  'Enter your email and password and fill the form below to create your own account.',
                   textAlign: TextAlign.center,
                   style: context.textTheme.bodyLarge,
                 ),
-                const Spacer(
-                  flex: 2,
-                ),
+                const Spacer(),
                 SignInForm(),
                 const SizedBox(
                   height: ValuesManager.s16,
@@ -106,7 +94,9 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     const Text("Don't have an account?"),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.router.push(const RegisterPageRoute());
+                        },
                         child: const Text(
                           'Sign up',
                         ))

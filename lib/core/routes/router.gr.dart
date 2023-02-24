@@ -47,6 +47,12 @@ class _$AppRouter extends RootStackRouter {
         child: const VerifyPage(),
       );
     },
+    CongratsVerificationPageRoute.name: (routeData) {
+      return AdaptivePage<void>(
+        routeData: routeData,
+        child: const CongratsVerificationPage(),
+      );
+    },
   };
 
   @override
@@ -70,6 +76,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           VerifyPageRoute.name,
           path: '/verify',
+        ),
+        RouteConfig(
+          CongratsVerificationPageRoute.name,
+          path: '/congrats',
         ),
         RouteConfig(
           '*#redirect',
@@ -138,4 +148,16 @@ class VerifyPageRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'VerifyPageRoute';
+}
+
+/// generated route for
+/// [CongratsVerificationPage]
+class CongratsVerificationPageRoute extends PageRouteInfo<void> {
+  const CongratsVerificationPageRoute()
+      : super(
+          CongratsVerificationPageRoute.name,
+          path: '/congrats',
+        );
+
+  static const String name = 'CongratsVerificationPageRoute';
 }

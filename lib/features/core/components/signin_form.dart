@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:fake_store/core/resources/values_manager.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/auth/presentation/widgets/default_textfield.dart';
 import 'package:fake_store/features/core/components/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignInForm extends StatelessWidget {
   SignInForm({super.key});
@@ -16,7 +15,22 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.loginSuccessOrFailure.fold(
+            () => null,
+            (a) => a.fold(
+                (l) => Fluttertoast.showToast(
+                    msg: l.map(
+                        serverFailure: (m) => m.message.toString(),
+                        customFailureWithMessage: (m) => m.message,
+                        unknownFailure: (m) => 'Unknown',
+                        internetConnectionFailure: (m) =>
+                            'internetConnectionFailure',
+                        tooManyRequests: (m) => 'tooManyRequests',
+                        authenticationFailure: (m) => 'authenticationFailure',
+                        permissionDenied: (ms) => ms.toString())),
+                (r) => Fluttertoast.showToast(msg: r.toString())));
+      },
       builder: (context, state) {
         return Form(
             child: Column(
@@ -37,7 +51,7 @@ class SignInForm extends StatelessWidget {
               controller: _password,
               iconData: Icons.lock_outline,
               label: 'Password',
-              hint: '***************',
+              hint: '*********',
               validator: (String? val) {
                 return null;
               },
@@ -46,15 +60,12 @@ class SignInForm extends StatelessWidget {
               height: ValuesManager.s32,
             ),
             DefaultButton(
-                onPressed: () {
-                  context.read<AuthBloc>().add(
-                      OnLoginEvent(_email.text.trim(), _password.text.trim()));
-
-                  state.loginSuccessOrFailure.fold(
-                      () => null,
-                      (a) => a.fold(
-                          (l) => log(l.toString()), (r) => log(r.toString())));
-                },
+                onPressed: state.isLoading
+                    ? null
+                    : () {
+                        context.read<AuthBloc>().add(OnLoginEvent(
+                            _email.text.trim(), _password.text.trim()));
+                      },
                 text: 'Login'),
           ],
         ));
