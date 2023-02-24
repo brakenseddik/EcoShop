@@ -28,6 +28,7 @@ dependencies:
   firebase_core: ^2.5.0
   firebase_analytics: ^10.1.1
   firebase_auth: ^4.2.6
+  google_sign_in:
   shimmer:
   shared_preferences:
   fluttertoast:

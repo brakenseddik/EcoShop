@@ -9,6 +9,7 @@ import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/welcome/presentation/manager/app_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt locator = GetIt.instance;
@@ -33,8 +34,10 @@ void _injectUseCases() {
 
 void _injectRepositories() {
   locator.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
+  locator.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
+
   locator.registerLazySingleton<IAuthRepository>(
-      () => AuthRepository(locator<FirebaseAuth>()));
+      () => AuthRepository(locator<FirebaseAuth>(), locator<GoogleSignIn>()));
 }
 
 Future<void> _injectServices() async {

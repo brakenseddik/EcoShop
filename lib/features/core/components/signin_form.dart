@@ -16,20 +16,21 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
-        state.loginSuccessOrFailure.fold(
-            () => null,
-            (a) => a.fold(
-                (l) => Fluttertoast.showToast(
-                    msg: l.map(
-                        serverFailure: (m) => m.message.toString(),
-                        customFailureWithMessage: (m) => m.message,
-                        unknownFailure: (m) => 'Unknown',
-                        internetConnectionFailure: (m) =>
-                            'internetConnectionFailure',
-                        tooManyRequests: (m) => 'tooManyRequests',
-                        authenticationFailure: (m) => 'authenticationFailure',
-                        permissionDenied: (ms) => ms.toString())),
-                (r) => Fluttertoast.showToast(msg: r.toString())));
+        state.loginSuccessOrFailure.fold(() => {}, (a) {
+          return a.fold(
+              (l) => Fluttertoast.showToast(
+                  msg: l.map(
+                      serverFailure: (m) => m.message.toString(),
+                      customFailureWithMessage: (m) => m.message,
+                      unknownFailure: (m) => 'Unknown',
+                      internetConnectionFailure: (m) =>
+                          'internetConnectionFailure',
+                      tooManyRequests: (m) => 'tooManyRequests',
+                      authenticationFailure: (m) => 'authenticationFailure',
+                      permissionDenied: (ms) => ms.toString())), (r) {
+            return Fluttertoast.showToast(msg: r.toString());
+          });
+        });
       },
       builder: (context, state) {
         return Form(

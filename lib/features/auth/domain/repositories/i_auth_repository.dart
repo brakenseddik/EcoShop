@@ -11,8 +11,10 @@ abstract class IAuthRepository {
     required String email,
     required String password,
   });
-  Future<void> signOut();
+  Future<Either<Failure, User?>> signInWithGoogle();
 
+  Future<void> signOut();
   bool? isAccountVerified();
   bool isLoggedIn();
+  Future<void> verifyEmail();
 }
