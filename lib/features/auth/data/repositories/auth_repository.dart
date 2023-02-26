@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
+import 'package:fake_store/core/constants/constants.dart';
 import 'package:fake_store/core/exceptions/failure.dart';
 import 'package:fake_store/features/auth/domain/repositories/i_auth_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepository implements IAuthRepository {
@@ -24,6 +26,37 @@ class AuthRepository implements IAuthRepository {
       return left(Failure.customFailureWithMessage(e.message!));
     } catch (e) {
       return left(const Failure.unknownFailure());
+    }
+  }
+
+  Future<Either<Failure, User?>> loginWithFacebook() async {
+    final loginResult = await FacebookAuth.instance.login();
+    final token = loginResult.accessToken?.token;
+    if (token == null) {
+      return left(const Failure.abortAuthentication());
+    }
+    final oauthCredentials = FacebookAuthProvider.credential(token);
+
+    try {
+      await _firebaseAuth.signInWithCredential(
+        oauthCredentials,
+      );
+      return right(_firebaseAuth.currentUser);
+    } on FirebaseAuthException catch (e) {
+      final email = e.email;
+      final credential = e.credential;
+      if (e.code == AppConstants.accountExistsWithDifferentCredentialsError &&
+          email != null &&
+          credential != null) {
+        final providers =
+            await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
+        if (providers.contains(AppConstants.googleCom)) {
+          await signInWithGoogle();
+          _firebaseAuth.currentUser?.linkWithCredential(credential);
+        }
+        return right(_firebaseAuth.currentUser);
+      }
+      return left(Failure.customFailureWithMessage(e.message ?? ''));
     }
   }
 

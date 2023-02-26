@@ -32,9 +32,7 @@ dependencies:
   shimmer:
   shared_preferences:
   fluttertoast:
-
-  
-  
+  flutter_facebook_auth:
 
 dev_dependencies:
   flutter_test:

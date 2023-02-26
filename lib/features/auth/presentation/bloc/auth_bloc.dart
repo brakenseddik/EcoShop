@@ -13,31 +13,42 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this.authUseCases) : super(AuthState.initial()) {
-    on<LogOut>(_onLogOut);
-    on<OnLoginEvent>(_onLogin);
-    on<OnRegisterEvent>(_onRegister);
+    on<LogOutPressed>(_onLogOut);
+    on<EmailChanged>(_onEmailChanged);
+    on<EmailValidated>(_onEmailValidated);
+    on<PasswordValidated>(_onPassValidated);
+    on<ConfirmChanged>(_onConfirmChanged);
+    on<ConfirmValidated>(_onConfirmValidated);
+    on<PasswordChanged>(_onPassChanged);
+    on<OnLoginPressedEvent>(_onLogin);
+    on<OnRegisterPressedEvent>(_onRegister);
     on<IsVerified>(_onIsVerified);
+    on<VerifyAccount>(_onVerifyAccount);
     on<IsLoggedIn>(_onLoggedIn);
   }
   final AuthUseCases authUseCases;
 
-  FutureOr<void> _onLogOut(LogOut event, Emitter<AuthState> emit) async {
+  FutureOr<void> _onLogOut(LogOutPressed event, Emitter<AuthState> emit) async {
     await authUseCases.signOut();
     emit(state.copyWith(isLoading: false, logoutSuccessOrFailure: true));
   }
 
-  FutureOr<void> _onLogin(OnLoginEvent event, Emitter<AuthState> emit) async {
+  FutureOr<void> _onLogin(
+      OnLoginPressedEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(isLoading: true));
     final res =
-        await authUseCases.login(email: event.email, password: event.password);
-    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
+        await authUseCases.login(email: state.email, password: state.password);
+    emit(state.copyWith(
+        isLoading: false,
+        loginSuccessOrFailure: some(res),
+        showErrorMessages: res.fold((l) => true, (r) => false)));
   }
 
   FutureOr<void> _onRegister(
-      OnRegisterEvent event, Emitter<AuthState> emit) async {
+      OnRegisterPressedEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(isLoading: true));
     final res = await authUseCases.register(
-        email: event.email, password: event.password);
+        email: state.email, password: state.password);
     emit(state.copyWith(isLoading: false, registerSuccessOrFailure: some(res)));
   }
 
@@ -50,6 +61,40 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onLoggedIn(IsLoggedIn event, Emitter<AuthState> emit) {
     final res = authUseCases.isLoggedIn();
-    emit(state.copyWith(isVerified: res));
+    emit(state.copyWith(isLoggedIn: res));
+  }
+
+  FutureOr<void> _onEmailChanged(EmailChanged event, Emitter<AuthState> emit) {
+    emit(state.copyWith(email: event.emailStr.trim()));
+  }
+
+  FutureOr<void> _onPassChanged(
+      PasswordChanged event, Emitter<AuthState> emit) {
+    emit(state.copyWith(password: event.passwordStr.trim()));
+  }
+
+  FutureOr<void> _onEmailValidated(
+      EmailValidated event, Emitter<AuthState> emit) {
+    emit(state.copyWith(isEmailValid: event.emailStr == null));
+  }
+
+  FutureOr<void> _onPassValidated(
+      PasswordValidated event, Emitter<AuthState> emit) {
+    emit(state.copyWith(isPassValid: event.passwordStr == null));
+  }
+
+  FutureOr<void> _onConfirmChanged(
+      ConfirmChanged event, Emitter<AuthState> emit) {
+    emit(state.copyWith(confirm: event.confirm.trim()));
+  }
+
+  FutureOr<void> _onConfirmValidated(
+      ConfirmValidated event, Emitter<AuthState> emit) {
+    emit(state.copyWith(isConfirmValid: event.confirm == null));
+  }
+
+  FutureOr<void> _onVerifyAccount(
+      VerifyAccount event, Emitter<AuthState> emit) {
+    // final res= authUseCases
   }
 }

@@ -18,30 +18,48 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
     required TResult Function() isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
     TResult? Function()? isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
@@ -49,30 +67,49 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
@@ -98,35 +135,1204 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 }
 
 /// @nodoc
-abstract class _$$VerifyEmailCopyWith<$Res> {
-  factory _$$VerifyEmailCopyWith(
-          _$VerifyEmail value, $Res Function(_$VerifyEmail) then) =
-      __$$VerifyEmailCopyWithImpl<$Res>;
+abstract class _$$EmailChangedCopyWith<$Res> {
+  factory _$$EmailChangedCopyWith(
+          _$EmailChanged value, $Res Function(_$EmailChanged) then) =
+      __$$EmailChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String emailStr});
 }
 
 /// @nodoc
-class __$$VerifyEmailCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$VerifyEmail>
-    implements _$$VerifyEmailCopyWith<$Res> {
-  __$$VerifyEmailCopyWithImpl(
-      _$VerifyEmail _value, $Res Function(_$VerifyEmail) _then)
+class __$$EmailChangedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$EmailChanged>
+    implements _$$EmailChangedCopyWith<$Res> {
+  __$$EmailChangedCopyWithImpl(
+      _$EmailChanged _value, $Res Function(_$EmailChanged) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emailStr = null,
+  }) {
+    return _then(_$EmailChanged(
+      null == emailStr
+          ? _value.emailStr
+          : emailStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$VerifyEmail implements VerifyEmail {
-  const _$VerifyEmail();
+class _$EmailChanged implements EmailChanged {
+  const _$EmailChanged(this.emailStr);
+
+  @override
+  final String emailStr;
 
   @override
   String toString() {
-    return 'AuthEvent.verifyEmail()';
+    return 'AuthEvent.emailChanged(emailStr: $emailStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$VerifyEmail);
+        (other.runtimeType == runtimeType &&
+            other is _$EmailChanged &&
+            (identical(other.emailStr, emailStr) ||
+                other.emailStr == emailStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, emailStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailChangedCopyWith<_$EmailChanged> get copyWith =>
+      __$$EmailChangedCopyWithImpl<_$EmailChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return emailChanged(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return emailChanged?.call(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(emailStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailChanged implements AuthEvent {
+  const factory EmailChanged(final String emailStr) = _$EmailChanged;
+
+  String get emailStr;
+  @JsonKey(ignore: true)
+  _$$EmailChangedCopyWith<_$EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailValidatedCopyWith<$Res> {
+  factory _$$EmailValidatedCopyWith(
+          _$EmailValidated value, $Res Function(_$EmailValidated) then) =
+      __$$EmailValidatedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? emailStr});
+}
+
+/// @nodoc
+class __$$EmailValidatedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$EmailValidated>
+    implements _$$EmailValidatedCopyWith<$Res> {
+  __$$EmailValidatedCopyWithImpl(
+      _$EmailValidated _value, $Res Function(_$EmailValidated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emailStr = freezed,
+  }) {
+    return _then(_$EmailValidated(
+      freezed == emailStr
+          ? _value.emailStr
+          : emailStr // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmailValidated implements EmailValidated {
+  const _$EmailValidated(this.emailStr);
+
+  @override
+  final String? emailStr;
+
+  @override
+  String toString() {
+    return 'AuthEvent.emailValidated(emailStr: $emailStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailValidated &&
+            (identical(other.emailStr, emailStr) ||
+                other.emailStr == emailStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, emailStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailValidatedCopyWith<_$EmailValidated> get copyWith =>
+      __$$EmailValidatedCopyWithImpl<_$EmailValidated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return emailValidated(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return emailValidated?.call(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (emailValidated != null) {
+      return emailValidated(emailStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return emailValidated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return emailValidated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (emailValidated != null) {
+      return emailValidated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailValidated implements AuthEvent {
+  const factory EmailValidated(final String? emailStr) = _$EmailValidated;
+
+  String? get emailStr;
+  @JsonKey(ignore: true)
+  _$$EmailValidatedCopyWith<_$EmailValidated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConfirmChangedCopyWith<$Res> {
+  factory _$$ConfirmChangedCopyWith(
+          _$ConfirmChanged value, $Res Function(_$ConfirmChanged) then) =
+      __$$ConfirmChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String confirm});
+}
+
+/// @nodoc
+class __$$ConfirmChangedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ConfirmChanged>
+    implements _$$ConfirmChangedCopyWith<$Res> {
+  __$$ConfirmChangedCopyWithImpl(
+      _$ConfirmChanged _value, $Res Function(_$ConfirmChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? confirm = null,
+  }) {
+    return _then(_$ConfirmChanged(
+      null == confirm
+          ? _value.confirm
+          : confirm // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConfirmChanged implements ConfirmChanged {
+  const _$ConfirmChanged(this.confirm);
+
+  @override
+  final String confirm;
+
+  @override
+  String toString() {
+    return 'AuthEvent.confirmChanged(confirm: $confirm)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmChanged &&
+            (identical(other.confirm, confirm) || other.confirm == confirm));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, confirm);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmChangedCopyWith<_$ConfirmChanged> get copyWith =>
+      __$$ConfirmChangedCopyWithImpl<_$ConfirmChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return confirmChanged(confirm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return confirmChanged?.call(confirm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (confirmChanged != null) {
+      return confirmChanged(confirm);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return confirmChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return confirmChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (confirmChanged != null) {
+      return confirmChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfirmChanged implements AuthEvent {
+  const factory ConfirmChanged(final String confirm) = _$ConfirmChanged;
+
+  String get confirm;
+  @JsonKey(ignore: true)
+  _$$ConfirmChangedCopyWith<_$ConfirmChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConfirmValidatedCopyWith<$Res> {
+  factory _$$ConfirmValidatedCopyWith(
+          _$ConfirmValidated value, $Res Function(_$ConfirmValidated) then) =
+      __$$ConfirmValidatedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? confirm});
+}
+
+/// @nodoc
+class __$$ConfirmValidatedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ConfirmValidated>
+    implements _$$ConfirmValidatedCopyWith<$Res> {
+  __$$ConfirmValidatedCopyWithImpl(
+      _$ConfirmValidated _value, $Res Function(_$ConfirmValidated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? confirm = freezed,
+  }) {
+    return _then(_$ConfirmValidated(
+      freezed == confirm
+          ? _value.confirm
+          : confirm // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConfirmValidated implements ConfirmValidated {
+  const _$ConfirmValidated(this.confirm);
+
+  @override
+  final String? confirm;
+
+  @override
+  String toString() {
+    return 'AuthEvent.confirmValidated(confirm: $confirm)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmValidated &&
+            (identical(other.confirm, confirm) || other.confirm == confirm));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, confirm);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmValidatedCopyWith<_$ConfirmValidated> get copyWith =>
+      __$$ConfirmValidatedCopyWithImpl<_$ConfirmValidated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return confirmValidated(confirm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return confirmValidated?.call(confirm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (confirmValidated != null) {
+      return confirmValidated(confirm);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return confirmValidated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return confirmValidated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (confirmValidated != null) {
+      return confirmValidated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfirmValidated implements AuthEvent {
+  const factory ConfirmValidated(final String? confirm) = _$ConfirmValidated;
+
+  String? get confirm;
+  @JsonKey(ignore: true)
+  _$$ConfirmValidatedCopyWith<_$ConfirmValidated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PasswordChangedCopyWith<$Res> {
+  factory _$$PasswordChangedCopyWith(
+          _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
+      __$$PasswordChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String passwordStr});
+}
+
+/// @nodoc
+class __$$PasswordChangedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$PasswordChanged>
+    implements _$$PasswordChangedCopyWith<$Res> {
+  __$$PasswordChangedCopyWithImpl(
+      _$PasswordChanged _value, $Res Function(_$PasswordChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? passwordStr = null,
+  }) {
+    return _then(_$PasswordChanged(
+      null == passwordStr
+          ? _value.passwordStr
+          : passwordStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PasswordChanged implements PasswordChanged {
+  const _$PasswordChanged(this.passwordStr);
+
+  @override
+  final String passwordStr;
+
+  @override
+  String toString() {
+    return 'AuthEvent.passwordChanged(passwordStr: $passwordStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PasswordChanged &&
+            (identical(other.passwordStr, passwordStr) ||
+                other.passwordStr == passwordStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, passwordStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+      __$$PasswordChangedCopyWithImpl<_$PasswordChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return passwordChanged(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return passwordChanged?.call(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(passwordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PasswordChanged implements AuthEvent {
+  const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
+
+  String get passwordStr;
+  @JsonKey(ignore: true)
+  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PasswordValidatedCopyWith<$Res> {
+  factory _$$PasswordValidatedCopyWith(
+          _$PasswordValidated value, $Res Function(_$PasswordValidated) then) =
+      __$$PasswordValidatedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? passwordStr});
+}
+
+/// @nodoc
+class __$$PasswordValidatedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$PasswordValidated>
+    implements _$$PasswordValidatedCopyWith<$Res> {
+  __$$PasswordValidatedCopyWithImpl(
+      _$PasswordValidated _value, $Res Function(_$PasswordValidated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? passwordStr = freezed,
+  }) {
+    return _then(_$PasswordValidated(
+      freezed == passwordStr
+          ? _value.passwordStr
+          : passwordStr // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PasswordValidated implements PasswordValidated {
+  const _$PasswordValidated(this.passwordStr);
+
+  @override
+  final String? passwordStr;
+
+  @override
+  String toString() {
+    return 'AuthEvent.passwordValidated(passwordStr: $passwordStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PasswordValidated &&
+            (identical(other.passwordStr, passwordStr) ||
+                other.passwordStr == passwordStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, passwordStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PasswordValidatedCopyWith<_$PasswordValidated> get copyWith =>
+      __$$PasswordValidatedCopyWithImpl<_$PasswordValidated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return passwordValidated(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return passwordValidated?.call(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (passwordValidated != null) {
+      return passwordValidated(passwordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return passwordValidated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return passwordValidated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (passwordValidated != null) {
+      return passwordValidated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PasswordValidated implements AuthEvent {
+  const factory PasswordValidated(final String? passwordStr) =
+      _$PasswordValidated;
+
+  String? get passwordStr;
+  @JsonKey(ignore: true)
+  _$$PasswordValidatedCopyWith<_$PasswordValidated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyAccountCopyWith<$Res> {
+  factory _$$VerifyAccountCopyWith(
+          _$VerifyAccount value, $Res Function(_$VerifyAccount) then) =
+      __$$VerifyAccountCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyAccountCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$VerifyAccount>
+    implements _$$VerifyAccountCopyWith<$Res> {
+  __$$VerifyAccountCopyWithImpl(
+      _$VerifyAccount _value, $Res Function(_$VerifyAccount) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyAccount implements VerifyAccount {
+  const _$VerifyAccount();
+
+  @override
+  String toString() {
+    return 'AuthEvent.verifyAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyAccount);
   }
 
   @override
@@ -135,42 +1341,60 @@ class _$VerifyEmail implements VerifyEmail {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
     required TResult Function() isLoggedIn,
   }) {
-    return verifyEmail();
+    return verifyAccount();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
     TResult? Function()? isLoggedIn,
   }) {
-    return verifyEmail?.call();
+    return verifyAccount?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (verifyEmail != null) {
-      return verifyEmail();
+    if (verifyAccount != null) {
+      return verifyAccount();
     }
     return orElse();
   }
@@ -178,415 +1402,100 @@ class _$VerifyEmail implements VerifyEmail {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
-    return verifyEmail(this);
+    return verifyAccount(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
-    return verifyEmail?.call(this);
+    return verifyAccount?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (verifyEmail != null) {
-      return verifyEmail(this);
+    if (verifyAccount != null) {
+      return verifyAccount(this);
     }
     return orElse();
   }
 }
 
-abstract class VerifyEmail implements AuthEvent {
-  const factory VerifyEmail() = _$VerifyEmail;
+abstract class VerifyAccount implements AuthEvent {
+  const factory VerifyAccount() = _$VerifyAccount;
 }
 
 /// @nodoc
-abstract class _$$OnLoginEventCopyWith<$Res> {
-  factory _$$OnLoginEventCopyWith(
-          _$OnLoginEvent value, $Res Function(_$OnLoginEvent) then) =
-      __$$OnLoginEventCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email, String password});
+abstract class _$$OnLoginPressedEventCopyWith<$Res> {
+  factory _$$OnLoginPressedEventCopyWith(_$OnLoginPressedEvent value,
+          $Res Function(_$OnLoginPressedEvent) then) =
+      __$$OnLoginPressedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnLoginEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$OnLoginEvent>
-    implements _$$OnLoginEventCopyWith<$Res> {
-  __$$OnLoginEventCopyWithImpl(
-      _$OnLoginEvent _value, $Res Function(_$OnLoginEvent) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_$OnLoginEvent(
-      null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnLoginEvent implements OnLoginEvent {
-  const _$OnLoginEvent(this.email, this.password);
-
-  @override
-  final String email;
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'AuthEvent.onLoginEvent(email: $email, password: $password)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnLoginEvent &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email, password);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnLoginEventCopyWith<_$OnLoginEvent> get copyWith =>
-      __$$OnLoginEventCopyWithImpl<_$OnLoginEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
-    required TResult Function() isAccountVerified,
-    required TResult Function() isLoggedIn,
-  }) {
-    return onLoginEvent(email, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
-    TResult? Function()? isAccountVerified,
-    TResult? Function()? isLoggedIn,
-  }) {
-    return onLoginEvent?.call(email, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
-    TResult Function()? isAccountVerified,
-    TResult Function()? isLoggedIn,
-    required TResult orElse(),
-  }) {
-    if (onLoginEvent != null) {
-      return onLoginEvent(email, password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
-    required TResult Function(IsVerified value) isAccountVerified,
-    required TResult Function(IsLoggedIn value) isLoggedIn,
-  }) {
-    return onLoginEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
-    TResult? Function(IsVerified value)? isAccountVerified,
-    TResult? Function(IsLoggedIn value)? isLoggedIn,
-  }) {
-    return onLoginEvent?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
-    TResult Function(IsVerified value)? isAccountVerified,
-    TResult Function(IsLoggedIn value)? isLoggedIn,
-    required TResult orElse(),
-  }) {
-    if (onLoginEvent != null) {
-      return onLoginEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class OnLoginEvent implements AuthEvent {
-  const factory OnLoginEvent(final String email, final String password) =
-      _$OnLoginEvent;
-
-  String get email;
-  String get password;
-  @JsonKey(ignore: true)
-  _$$OnLoginEventCopyWith<_$OnLoginEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OnRegisterEventCopyWith<$Res> {
-  factory _$$OnRegisterEventCopyWith(
-          _$OnRegisterEvent value, $Res Function(_$OnRegisterEvent) then) =
-      __$$OnRegisterEventCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String email, String password});
-}
-
-/// @nodoc
-class __$$OnRegisterEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$OnRegisterEvent>
-    implements _$$OnRegisterEventCopyWith<$Res> {
-  __$$OnRegisterEventCopyWithImpl(
-      _$OnRegisterEvent _value, $Res Function(_$OnRegisterEvent) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_$OnRegisterEvent(
-      null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnRegisterEvent implements OnRegisterEvent {
-  const _$OnRegisterEvent(this.email, this.password);
-
-  @override
-  final String email;
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'AuthEvent.onRegisterEvent(email: $email, password: $password)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnRegisterEvent &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, email, password);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnRegisterEventCopyWith<_$OnRegisterEvent> get copyWith =>
-      __$$OnRegisterEventCopyWithImpl<_$OnRegisterEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
-    required TResult Function() isAccountVerified,
-    required TResult Function() isLoggedIn,
-  }) {
-    return onRegisterEvent(email, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
-    TResult? Function()? isAccountVerified,
-    TResult? Function()? isLoggedIn,
-  }) {
-    return onRegisterEvent?.call(email, password);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
-    TResult Function()? isAccountVerified,
-    TResult Function()? isLoggedIn,
-    required TResult orElse(),
-  }) {
-    if (onRegisterEvent != null) {
-      return onRegisterEvent(email, password);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
-    required TResult Function(IsVerified value) isAccountVerified,
-    required TResult Function(IsLoggedIn value) isLoggedIn,
-  }) {
-    return onRegisterEvent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
-    TResult? Function(IsVerified value)? isAccountVerified,
-    TResult? Function(IsLoggedIn value)? isLoggedIn,
-  }) {
-    return onRegisterEvent?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
-    TResult Function(IsVerified value)? isAccountVerified,
-    TResult Function(IsLoggedIn value)? isLoggedIn,
-    required TResult orElse(),
-  }) {
-    if (onRegisterEvent != null) {
-      return onRegisterEvent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class OnRegisterEvent implements AuthEvent {
-  const factory OnRegisterEvent(final String email, final String password) =
-      _$OnRegisterEvent;
-
-  String get email;
-  String get password;
-  @JsonKey(ignore: true)
-  _$$OnRegisterEventCopyWith<_$OnRegisterEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LogOutCopyWith<$Res> {
-  factory _$$LogOutCopyWith(_$LogOut value, $Res Function(_$LogOut) then) =
-      __$$LogOutCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LogOutCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$LogOut>
-    implements _$$LogOutCopyWith<$Res> {
-  __$$LogOutCopyWithImpl(_$LogOut _value, $Res Function(_$LogOut) _then)
+class __$$OnLoginPressedEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$OnLoginPressedEvent>
+    implements _$$OnLoginPressedEventCopyWith<$Res> {
+  __$$OnLoginPressedEventCopyWithImpl(
+      _$OnLoginPressedEvent _value, $Res Function(_$OnLoginPressedEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LogOut implements LogOut {
-  const _$LogOut();
+class _$OnLoginPressedEvent implements OnLoginPressedEvent {
+  const _$OnLoginPressedEvent();
 
   @override
   String toString() {
-    return 'AuthEvent.logOut()';
+    return 'AuthEvent.onLoginPressedEvent()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogOut);
+        (other.runtimeType == runtimeType && other is _$OnLoginPressedEvent);
   }
 
   @override
@@ -595,42 +1504,60 @@ class _$LogOut implements LogOut {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
     required TResult Function() isLoggedIn,
   }) {
-    return logOut();
+    return onLoginPressedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
     TResult? Function()? isLoggedIn,
   }) {
-    return logOut?.call();
+    return onLoginPressedEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (logOut != null) {
-      return logOut();
+    if (onLoginPressedEvent != null) {
+      return onLoginPressedEvent();
     }
     return orElse();
   }
@@ -638,49 +1565,394 @@ class _$LogOut implements LogOut {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
-    return logOut(this);
+    return onLoginPressedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
-    return logOut?.call(this);
+    return onLoginPressedEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (logOut != null) {
-      return logOut(this);
+    if (onLoginPressedEvent != null) {
+      return onLoginPressedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class LogOut implements AuthEvent {
-  const factory LogOut() = _$LogOut;
+abstract class OnLoginPressedEvent implements AuthEvent {
+  const factory OnLoginPressedEvent() = _$OnLoginPressedEvent;
+}
+
+/// @nodoc
+abstract class _$$OnRegisterPressedEventCopyWith<$Res> {
+  factory _$$OnRegisterPressedEventCopyWith(_$OnRegisterPressedEvent value,
+          $Res Function(_$OnRegisterPressedEvent) then) =
+      __$$OnRegisterPressedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnRegisterPressedEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$OnRegisterPressedEvent>
+    implements _$$OnRegisterPressedEventCopyWith<$Res> {
+  __$$OnRegisterPressedEventCopyWithImpl(_$OnRegisterPressedEvent _value,
+      $Res Function(_$OnRegisterPressedEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
+  const _$OnRegisterPressedEvent();
+
+  @override
+  String toString() {
+    return 'AuthEvent.onRegisterPressedEvent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnRegisterPressedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return onRegisterPressedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return onRegisterPressedEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (onRegisterPressedEvent != null) {
+      return onRegisterPressedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return onRegisterPressedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return onRegisterPressedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (onRegisterPressedEvent != null) {
+      return onRegisterPressedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnRegisterPressedEvent implements AuthEvent {
+  const factory OnRegisterPressedEvent() = _$OnRegisterPressedEvent;
+}
+
+/// @nodoc
+abstract class _$$LogOutPressedCopyWith<$Res> {
+  factory _$$LogOutPressedCopyWith(
+          _$LogOutPressed value, $Res Function(_$LogOutPressed) then) =
+      __$$LogOutPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogOutPressedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogOutPressed>
+    implements _$$LogOutPressedCopyWith<$Res> {
+  __$$LogOutPressedCopyWithImpl(
+      _$LogOutPressed _value, $Res Function(_$LogOutPressed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogOutPressed implements LogOutPressed {
+  const _$LogOutPressed();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logOutPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogOutPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() isLoggedIn,
+  }) {
+    return logOutPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return logOutPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (logOutPressed != null) {
+      return logOutPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return logOutPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return logOutPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (logOutPressed != null) {
+      return logOutPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogOutPressed implements AuthEvent {
+  const factory LogOutPressed() = _$LogOutPressed;
 }
 
 /// @nodoc
@@ -721,10 +1993,16 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
     required TResult Function() isLoggedIn,
   }) {
@@ -734,10 +2012,16 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
     TResult? Function()? isLoggedIn,
   }) {
@@ -747,10 +2031,16 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
@@ -764,10 +2054,17 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
@@ -777,10 +2074,16 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
@@ -790,10 +2093,16 @@ class _$IsVerified implements IsVerified {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
@@ -847,10 +2156,16 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() verifyEmail,
-    required TResult Function(String email, String password) onLoginEvent,
-    required TResult Function(String email, String password) onRegisterEvent,
-    required TResult Function() logOut,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() verifyAccount,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
     required TResult Function() isLoggedIn,
   }) {
@@ -860,10 +2175,16 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? verifyEmail,
-    TResult? Function(String email, String password)? onLoginEvent,
-    TResult? Function(String email, String password)? onRegisterEvent,
-    TResult? Function()? logOut,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
     TResult? Function()? isLoggedIn,
   }) {
@@ -873,10 +2194,16 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? verifyEmail,
-    TResult Function(String email, String password)? onLoginEvent,
-    TResult Function(String email, String password)? onRegisterEvent,
-    TResult Function()? logOut,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? verifyAccount,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
@@ -890,10 +2217,17 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(VerifyEmail value) verifyEmail,
-    required TResult Function(OnLoginEvent value) onLoginEvent,
-    required TResult Function(OnRegisterEvent value) onRegisterEvent,
-    required TResult Function(LogOut value) logOut,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
@@ -903,10 +2237,16 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(VerifyEmail value)? verifyEmail,
-    TResult? Function(OnLoginEvent value)? onLoginEvent,
-    TResult? Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult? Function(LogOut value)? logOut,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
@@ -916,10 +2256,16 @@ class _$IsLoggedIn implements IsLoggedIn {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(VerifyEmail value)? verifyEmail,
-    TResult Function(OnLoginEvent value)? onLoginEvent,
-    TResult Function(OnRegisterEvent value)? onRegisterEvent,
-    TResult Function(LogOut value)? logOut,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
@@ -939,8 +2285,16 @@ abstract class IsLoggedIn implements AuthEvent {
 mixin _$AuthState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
+  bool get isEmailValid => throw _privateConstructorUsedError;
+  bool get isPassValid => throw _privateConstructorUsedError;
+  bool get isConfirmValid => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isVerified => throw _privateConstructorUsedError;
+  bool get isFormValidated => throw _privateConstructorUsedError;
   bool get logoutSuccessOrFailure => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+  String get confirm => throw _privateConstructorUsedError;
   Option<Either<Failure, User?>> get loginSuccessOrFailure =>
       throw _privateConstructorUsedError;
   Option<Either<Failure, User?>> get registerSuccessOrFailure =>
@@ -960,8 +2314,16 @@ abstract class $AuthStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       bool isLoggedIn,
+      bool isEmailValid,
+      bool isPassValid,
+      bool isConfirmValid,
+      bool showErrorMessages,
       bool isVerified,
+      bool isFormValidated,
       bool logoutSuccessOrFailure,
+      String email,
+      String password,
+      String confirm,
       Option<Either<Failure, User?>> loginSuccessOrFailure,
       Option<Either<Failure, User?>> registerSuccessOrFailure,
       Failure? error});
@@ -984,8 +2346,16 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   $Res call({
     Object? isLoading = null,
     Object? isLoggedIn = null,
+    Object? isEmailValid = null,
+    Object? isPassValid = null,
+    Object? isConfirmValid = null,
+    Object? showErrorMessages = null,
     Object? isVerified = null,
+    Object? isFormValidated = null,
     Object? logoutSuccessOrFailure = null,
+    Object? email = null,
+    Object? password = null,
+    Object? confirm = null,
     Object? loginSuccessOrFailure = null,
     Object? registerSuccessOrFailure = null,
     Object? error = freezed,
@@ -999,14 +2369,46 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
               as bool,
+      isEmailValid: null == isEmailValid
+          ? _value.isEmailValid
+          : isEmailValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPassValid: null == isPassValid
+          ? _value.isPassValid
+          : isPassValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isConfirmValid: null == isConfirmValid
+          ? _value.isConfirmValid
+          : isConfirmValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: null == showErrorMessages
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       isVerified: null == isVerified
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFormValidated: null == isFormValidated
+          ? _value.isFormValidated
+          : isFormValidated // ignore: cast_nullable_to_non_nullable
               as bool,
       logoutSuccessOrFailure: null == logoutSuccessOrFailure
           ? _value.logoutSuccessOrFailure
           : logoutSuccessOrFailure // ignore: cast_nullable_to_non_nullable
               as bool,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirm: null == confirm
+          ? _value.confirm
+          : confirm // ignore: cast_nullable_to_non_nullable
+              as String,
       loginSuccessOrFailure: null == loginSuccessOrFailure
           ? _value.loginSuccessOrFailure
           : loginSuccessOrFailure // ignore: cast_nullable_to_non_nullable
@@ -1045,8 +2447,16 @@ abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       bool isLoggedIn,
+      bool isEmailValid,
+      bool isPassValid,
+      bool isConfirmValid,
+      bool showErrorMessages,
       bool isVerified,
+      bool isFormValidated,
       bool logoutSuccessOrFailure,
+      String email,
+      String password,
+      String confirm,
       Option<Either<Failure, User?>> loginSuccessOrFailure,
       Option<Either<Failure, User?>> registerSuccessOrFailure,
       Failure? error});
@@ -1068,8 +2478,16 @@ class __$$_AuthStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? isLoggedIn = null,
+    Object? isEmailValid = null,
+    Object? isPassValid = null,
+    Object? isConfirmValid = null,
+    Object? showErrorMessages = null,
     Object? isVerified = null,
+    Object? isFormValidated = null,
     Object? logoutSuccessOrFailure = null,
+    Object? email = null,
+    Object? password = null,
+    Object? confirm = null,
     Object? loginSuccessOrFailure = null,
     Object? registerSuccessOrFailure = null,
     Object? error = freezed,
@@ -1083,14 +2501,46 @@ class __$$_AuthStateCopyWithImpl<$Res>
           ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
               as bool,
+      isEmailValid: null == isEmailValid
+          ? _value.isEmailValid
+          : isEmailValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPassValid: null == isPassValid
+          ? _value.isPassValid
+          : isPassValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isConfirmValid: null == isConfirmValid
+          ? _value.isConfirmValid
+          : isConfirmValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: null == showErrorMessages
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       isVerified: null == isVerified
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFormValidated: null == isFormValidated
+          ? _value.isFormValidated
+          : isFormValidated // ignore: cast_nullable_to_non_nullable
               as bool,
       logoutSuccessOrFailure: null == logoutSuccessOrFailure
           ? _value.logoutSuccessOrFailure
           : logoutSuccessOrFailure // ignore: cast_nullable_to_non_nullable
               as bool,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirm: null == confirm
+          ? _value.confirm
+          : confirm // ignore: cast_nullable_to_non_nullable
+              as String,
       loginSuccessOrFailure: null == loginSuccessOrFailure
           ? _value.loginSuccessOrFailure
           : loginSuccessOrFailure // ignore: cast_nullable_to_non_nullable
@@ -1113,8 +2563,16 @@ class _$_AuthState implements _AuthState {
   const _$_AuthState(
       {required this.isLoading,
       required this.isLoggedIn,
+      required this.isEmailValid,
+      required this.isPassValid,
+      required this.isConfirmValid,
+      required this.showErrorMessages,
       required this.isVerified,
+      required this.isFormValidated,
       required this.logoutSuccessOrFailure,
+      required this.email,
+      required this.password,
+      required this.confirm,
       required this.loginSuccessOrFailure,
       required this.registerSuccessOrFailure,
       required this.error});
@@ -1124,9 +2582,25 @@ class _$_AuthState implements _AuthState {
   @override
   final bool isLoggedIn;
   @override
+  final bool isEmailValid;
+  @override
+  final bool isPassValid;
+  @override
+  final bool isConfirmValid;
+  @override
+  final bool showErrorMessages;
+  @override
   final bool isVerified;
   @override
+  final bool isFormValidated;
+  @override
   final bool logoutSuccessOrFailure;
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final String confirm;
   @override
   final Option<Either<Failure, User?>> loginSuccessOrFailure;
   @override
@@ -1136,7 +2610,7 @@ class _$_AuthState implements _AuthState {
 
   @override
   String toString() {
-    return 'AuthState(isLoading: $isLoading, isLoggedIn: $isLoggedIn, isVerified: $isVerified, logoutSuccessOrFailure: $logoutSuccessOrFailure, loginSuccessOrFailure: $loginSuccessOrFailure, registerSuccessOrFailure: $registerSuccessOrFailure, error: $error)';
+    return 'AuthState(isLoading: $isLoading, isLoggedIn: $isLoggedIn, isEmailValid: $isEmailValid, isPassValid: $isPassValid, isConfirmValid: $isConfirmValid, showErrorMessages: $showErrorMessages, isVerified: $isVerified, isFormValidated: $isFormValidated, logoutSuccessOrFailure: $logoutSuccessOrFailure, email: $email, password: $password, confirm: $confirm, loginSuccessOrFailure: $loginSuccessOrFailure, registerSuccessOrFailure: $registerSuccessOrFailure, error: $error)';
   }
 
   @override
@@ -1148,10 +2622,24 @@ class _$_AuthState implements _AuthState {
                 other.isLoading == isLoading) &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
+            (identical(other.isEmailValid, isEmailValid) ||
+                other.isEmailValid == isEmailValid) &&
+            (identical(other.isPassValid, isPassValid) ||
+                other.isPassValid == isPassValid) &&
+            (identical(other.isConfirmValid, isConfirmValid) ||
+                other.isConfirmValid == isConfirmValid) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isVerified, isVerified) ||
                 other.isVerified == isVerified) &&
+            (identical(other.isFormValidated, isFormValidated) ||
+                other.isFormValidated == isFormValidated) &&
             (identical(other.logoutSuccessOrFailure, logoutSuccessOrFailure) ||
                 other.logoutSuccessOrFailure == logoutSuccessOrFailure) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.confirm, confirm) || other.confirm == confirm) &&
             (identical(other.loginSuccessOrFailure, loginSuccessOrFailure) ||
                 other.loginSuccessOrFailure == loginSuccessOrFailure) &&
             (identical(
@@ -1165,8 +2653,16 @@ class _$_AuthState implements _AuthState {
       runtimeType,
       isLoading,
       isLoggedIn,
+      isEmailValid,
+      isPassValid,
+      isConfirmValid,
+      showErrorMessages,
       isVerified,
+      isFormValidated,
       logoutSuccessOrFailure,
+      email,
+      password,
+      confirm,
       loginSuccessOrFailure,
       registerSuccessOrFailure,
       error);
@@ -1182,8 +2678,16 @@ abstract class _AuthState implements AuthState {
   const factory _AuthState(
       {required final bool isLoading,
       required final bool isLoggedIn,
+      required final bool isEmailValid,
+      required final bool isPassValid,
+      required final bool isConfirmValid,
+      required final bool showErrorMessages,
       required final bool isVerified,
+      required final bool isFormValidated,
       required final bool logoutSuccessOrFailure,
+      required final String email,
+      required final String password,
+      required final String confirm,
       required final Option<Either<Failure, User?>> loginSuccessOrFailure,
       required final Option<Either<Failure, User?>> registerSuccessOrFailure,
       required final Failure? error}) = _$_AuthState;
@@ -1193,9 +2697,25 @@ abstract class _AuthState implements AuthState {
   @override
   bool get isLoggedIn;
   @override
+  bool get isEmailValid;
+  @override
+  bool get isPassValid;
+  @override
+  bool get isConfirmValid;
+  @override
+  bool get showErrorMessages;
+  @override
   bool get isVerified;
   @override
+  bool get isFormValidated;
+  @override
   bool get logoutSuccessOrFailure;
+  @override
+  String get email;
+  @override
+  String get password;
+  @override
+  String get confirm;
   @override
   Option<Either<Failure, User?>> get loginSuccessOrFailure;
   @override
