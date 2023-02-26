@@ -3,6 +3,7 @@ import 'package:fake_store/features/auth/presentation/pages/congrats_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/login_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/register_page.dart';
 import 'package:fake_store/features/auth/presentation/pages/verify_page.dart';
+import 'package:fake_store/features/home/presentation/pages/home_page.dart';
 import 'package:fake_store/features/welcome/presentation/pages/onboarding_screen.dart';
 import 'package:fake_store/features/welcome/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,10 @@ part 'router.gr.dart';
     AutoRoute<void>(
       path: '/congrats',
       page: CongratsVerificationPage,
+    ),
+    AutoRoute<void>(
+      path: '/main',
+      page: HomePage,
     ),
     RedirectRoute(path: '*', redirectTo: '/'),
   ],

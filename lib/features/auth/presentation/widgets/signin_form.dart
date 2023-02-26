@@ -32,7 +32,7 @@ class SignInForm extends StatelessWidget {
                       },
                     ),
                   ), (r) {
-            return Fluttertoast.showToast(msg: r.toString());
+            return Fluttertoast.showToast(msg: r!.emailVerified.toString());
           });
         });
       },

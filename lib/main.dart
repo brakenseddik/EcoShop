@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:fake_store/core/resources/themes_manager.dart';
 import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/core/utils/firebase_options.dart';
 import 'package:fake_store/core/utils/locator.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/welcome/presentation/manager/app_bloc.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +22,8 @@ void main() async {
 }
 
 class App extends StatelessWidget {
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
   App({super.key});
   final _appRouter = AppRouter();
   @override
@@ -31,7 +35,9 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routerDelegate: _appRouter.delegate(),
+        routerDelegate: AutoRouterDelegate(_appRouter,
+            navigatorObservers: () =>
+                [FirebaseAnalyticsObserver(analytics: App.analytics)]),
         routeInformationParser: _appRouter.defaultRouteParser(),
         theme: ThemesManager.lightTheme,
         supportedLocales: const [

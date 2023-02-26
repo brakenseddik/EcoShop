@@ -9,10 +9,14 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.passwordChanged(String passwordStr) = PasswordChanged;
   const factory AuthEvent.passwordValidated(String? passwordStr) =
       PasswordValidated;
-  const factory AuthEvent.verifyAccount() = VerifyAccount;
+
+  const factory AuthEvent.googlePressed() = GoogleLoginPressed;
+  const factory AuthEvent.facebookPressed() = FacebookLoginPressed;
   const factory AuthEvent.onLoginPressedEvent() = OnLoginPressedEvent;
   const factory AuthEvent.onRegisterPressedEvent() = OnRegisterPressedEvent;
   const factory AuthEvent.logOutPressed() = LogOutPressed;
+
   const factory AuthEvent.isAccountVerified() = IsVerified;
+  const factory AuthEvent.verifyAccount() = VerifyAccount;
   const factory AuthEvent.isLoggedIn() = IsLoggedIn;
 }

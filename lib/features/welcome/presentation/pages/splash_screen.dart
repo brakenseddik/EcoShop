@@ -36,19 +36,22 @@ class _SplashPageState extends State<SplashPage> {
       },
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
+          context.read<AuthBloc>().add(const IsVerified());
           if (!state.isLoggedIn) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const LoginPageRoute(),
-                  predicate: (route) => false);
+                  predicate: (route) => true);
+            });
+          } else if (state.isVerified) {
+            Future.delayed(const Duration(seconds: 3), () {
+              context.router.pushAndPopUntil(const HomePageRoute(),
+                  predicate: (route) => true);
             });
           } else {
-            context.read<AuthBloc>().add(const IsVerified());
-            if (!state.isVerified) {
+            Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const VerifyPageRoute(),
-                  predicate: (route) => false);
-            } else {
-              //visit home
-            }
+                  predicate: (route) => true);
+            });
           }
         },
         child: Scaffold(

@@ -15,6 +15,14 @@ class AuthUseCases {
     return _authRepository.login(email: email, password: password);
   }
 
+  Future<Either<Failure, User?>> googleSignIn() async {
+    return _authRepository.signInWithGoogle();
+  }
+
+  Future<Either<Failure, User?>> facebookSignIn() async {
+    return _authRepository.loginWithFacebook();
+  }
+
   Future<Either<Failure, User?>> register({
     required String email,
     required String password,
@@ -26,11 +34,15 @@ class AuthUseCases {
     return _authRepository.signOut();
   }
 
-  bool? isEmailVerified() {
+  Future<bool?> isAccountVerified() {
     return _authRepository.isAccountVerified();
   }
 
   bool isLoggedIn() {
     return _authRepository.isLoggedIn();
+  }
+
+  Future<void> verifyAccount() async {
+    return _authRepository.verifyEmail();
   }
 }

@@ -19,7 +19,7 @@ class SocialLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: size.width / 2 - 40,
+      width: size.width / 2 - 65,
       child: OutlinedButton(
           onPressed: onPressed,
           child: Row(

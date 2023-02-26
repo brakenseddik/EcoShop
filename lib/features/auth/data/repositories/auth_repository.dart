@@ -9,9 +9,10 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepository implements IAuthRepository {
-  AuthRepository(this._firebaseAuth, this._googleSignIn);
+  AuthRepository(this._firebaseAuth, this._googleSignIn, this._facebookAuth);
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FacebookAuth _facebookAuth;
 
   @override
   Future<Either<Failure, User?>> login({
@@ -29,8 +30,9 @@ class AuthRepository implements IAuthRepository {
     }
   }
 
+  @override
   Future<Either<Failure, User?>> loginWithFacebook() async {
-    final loginResult = await FacebookAuth.instance.login();
+    final loginResult = await _facebookAuth.login();
     final token = loginResult.accessToken?.token;
     if (token == null) {
       return left(const Failure.abortAuthentication());
@@ -64,6 +66,7 @@ class AuthRepository implements IAuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
     await _googleSignIn.signOut();
+    await _facebookAuth.logOut();
   }
 
   @override
@@ -73,6 +76,7 @@ class AuthRepository implements IAuthRepository {
       final res = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       await res.user?.sendEmailVerification();
+      await res.user?.reload();
       return right(res.user);
     } on FirebaseAuthException catch (e) {
       return left(Failure.customFailureWithMessage(e.message ?? ''));
@@ -108,11 +112,13 @@ class AuthRepository implements IAuthRepository {
     if (_firebaseAuth.currentUser != null &&
         _firebaseAuth.currentUser?.emailVerified != true) {
       await _firebaseAuth.currentUser?.sendEmailVerification();
+      await _firebaseAuth.currentUser?.reload();
     }
   }
 
   @override
-  bool? isAccountVerified() {
+  Future<bool?> isAccountVerified() async {
+    await _firebaseAuth.currentUser?.reload();
     return _firebaseAuth.currentUser?.emailVerified;
   }
 

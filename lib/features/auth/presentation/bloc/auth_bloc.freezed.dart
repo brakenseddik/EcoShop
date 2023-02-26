@@ -24,11 +24,13 @@ mixin _$AuthEvent {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,11 +42,13 @@ mixin _$AuthEvent {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,11 +60,13 @@ mixin _$AuthEvent {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) =>
@@ -73,12 +79,14 @@ mixin _$AuthEvent {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -90,11 +98,13 @@ mixin _$AuthEvent {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -106,11 +116,13 @@ mixin _$AuthEvent {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) =>
@@ -205,11 +217,13 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return emailChanged(emailStr);
@@ -224,11 +238,13 @@ class _$EmailChanged implements EmailChanged {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return emailChanged?.call(emailStr);
@@ -243,11 +259,13 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -266,12 +284,14 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return emailChanged(this);
@@ -286,11 +306,13 @@ class _$EmailChanged implements EmailChanged {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return emailChanged?.call(this);
@@ -305,11 +327,13 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -400,11 +424,13 @@ class _$EmailValidated implements EmailValidated {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return emailValidated(emailStr);
@@ -419,11 +445,13 @@ class _$EmailValidated implements EmailValidated {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return emailValidated?.call(emailStr);
@@ -438,11 +466,13 @@ class _$EmailValidated implements EmailValidated {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -461,12 +491,14 @@ class _$EmailValidated implements EmailValidated {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return emailValidated(this);
@@ -481,11 +513,13 @@ class _$EmailValidated implements EmailValidated {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return emailValidated?.call(this);
@@ -500,11 +534,13 @@ class _$EmailValidated implements EmailValidated {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -594,11 +630,13 @@ class _$ConfirmChanged implements ConfirmChanged {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return confirmChanged(confirm);
@@ -613,11 +651,13 @@ class _$ConfirmChanged implements ConfirmChanged {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return confirmChanged?.call(confirm);
@@ -632,11 +672,13 @@ class _$ConfirmChanged implements ConfirmChanged {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -655,12 +697,14 @@ class _$ConfirmChanged implements ConfirmChanged {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return confirmChanged(this);
@@ -675,11 +719,13 @@ class _$ConfirmChanged implements ConfirmChanged {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return confirmChanged?.call(this);
@@ -694,11 +740,13 @@ class _$ConfirmChanged implements ConfirmChanged {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -788,11 +836,13 @@ class _$ConfirmValidated implements ConfirmValidated {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return confirmValidated(confirm);
@@ -807,11 +857,13 @@ class _$ConfirmValidated implements ConfirmValidated {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return confirmValidated?.call(confirm);
@@ -826,11 +878,13 @@ class _$ConfirmValidated implements ConfirmValidated {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -849,12 +903,14 @@ class _$ConfirmValidated implements ConfirmValidated {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return confirmValidated(this);
@@ -869,11 +925,13 @@ class _$ConfirmValidated implements ConfirmValidated {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return confirmValidated?.call(this);
@@ -888,11 +946,13 @@ class _$ConfirmValidated implements ConfirmValidated {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -983,11 +1043,13 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return passwordChanged(passwordStr);
@@ -1002,11 +1064,13 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return passwordChanged?.call(passwordStr);
@@ -1021,11 +1085,13 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1044,12 +1110,14 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return passwordChanged(this);
@@ -1064,11 +1132,13 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return passwordChanged?.call(this);
@@ -1083,11 +1153,13 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1178,11 +1250,13 @@ class _$PasswordValidated implements PasswordValidated {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return passwordValidated(passwordStr);
@@ -1197,11 +1271,13 @@ class _$PasswordValidated implements PasswordValidated {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return passwordValidated?.call(passwordStr);
@@ -1216,11 +1292,13 @@ class _$PasswordValidated implements PasswordValidated {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1239,12 +1317,14 @@ class _$PasswordValidated implements PasswordValidated {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return passwordValidated(this);
@@ -1259,11 +1339,13 @@ class _$PasswordValidated implements PasswordValidated {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return passwordValidated?.call(this);
@@ -1278,11 +1360,13 @@ class _$PasswordValidated implements PasswordValidated {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1304,35 +1388,35 @@ abstract class PasswordValidated implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$VerifyAccountCopyWith<$Res> {
-  factory _$$VerifyAccountCopyWith(
-          _$VerifyAccount value, $Res Function(_$VerifyAccount) then) =
-      __$$VerifyAccountCopyWithImpl<$Res>;
+abstract class _$$GoogleLoginPressedCopyWith<$Res> {
+  factory _$$GoogleLoginPressedCopyWith(_$GoogleLoginPressed value,
+          $Res Function(_$GoogleLoginPressed) then) =
+      __$$GoogleLoginPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$VerifyAccountCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$VerifyAccount>
-    implements _$$VerifyAccountCopyWith<$Res> {
-  __$$VerifyAccountCopyWithImpl(
-      _$VerifyAccount _value, $Res Function(_$VerifyAccount) _then)
+class __$$GoogleLoginPressedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GoogleLoginPressed>
+    implements _$$GoogleLoginPressedCopyWith<$Res> {
+  __$$GoogleLoginPressedCopyWithImpl(
+      _$GoogleLoginPressed _value, $Res Function(_$GoogleLoginPressed) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$VerifyAccount implements VerifyAccount {
-  const _$VerifyAccount();
+class _$GoogleLoginPressed implements GoogleLoginPressed {
+  const _$GoogleLoginPressed();
 
   @override
   String toString() {
-    return 'AuthEvent.verifyAccount()';
+    return 'AuthEvent.googlePressed()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$VerifyAccount);
+        (other.runtimeType == runtimeType && other is _$GoogleLoginPressed);
   }
 
   @override
@@ -1347,14 +1431,16 @@ class _$VerifyAccount implements VerifyAccount {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
-    return verifyAccount();
+    return googlePressed();
   }
 
   @override
@@ -1366,14 +1452,16 @@ class _$VerifyAccount implements VerifyAccount {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
-    return verifyAccount?.call();
+    return googlePressed?.call();
   }
 
   @override
@@ -1385,16 +1473,18 @@ class _$VerifyAccount implements VerifyAccount {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (verifyAccount != null) {
-      return verifyAccount();
+    if (googlePressed != null) {
+      return googlePressed();
     }
     return orElse();
   }
@@ -1408,15 +1498,17 @@ class _$VerifyAccount implements VerifyAccount {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
-    return verifyAccount(this);
+    return googlePressed(this);
   }
 
   @override
@@ -1428,14 +1520,16 @@ class _$VerifyAccount implements VerifyAccount {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
-    return verifyAccount?.call(this);
+    return googlePressed?.call(this);
   }
 
   @override
@@ -1447,23 +1541,200 @@ class _$VerifyAccount implements VerifyAccount {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
-    if (verifyAccount != null) {
-      return verifyAccount(this);
+    if (googlePressed != null) {
+      return googlePressed(this);
     }
     return orElse();
   }
 }
 
-abstract class VerifyAccount implements AuthEvent {
-  const factory VerifyAccount() = _$VerifyAccount;
+abstract class GoogleLoginPressed implements AuthEvent {
+  const factory GoogleLoginPressed() = _$GoogleLoginPressed;
+}
+
+/// @nodoc
+abstract class _$$FacebookLoginPressedCopyWith<$Res> {
+  factory _$$FacebookLoginPressedCopyWith(_$FacebookLoginPressed value,
+          $Res Function(_$FacebookLoginPressed) then) =
+      __$$FacebookLoginPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FacebookLoginPressedCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$FacebookLoginPressed>
+    implements _$$FacebookLoginPressedCopyWith<$Res> {
+  __$$FacebookLoginPressedCopyWithImpl(_$FacebookLoginPressed _value,
+      $Res Function(_$FacebookLoginPressed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FacebookLoginPressed implements FacebookLoginPressed {
+  const _$FacebookLoginPressed();
+
+  @override
+  String toString() {
+    return 'AuthEvent.facebookPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FacebookLoginPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
+    required TResult Function() isLoggedIn,
+  }) {
+    return facebookPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return facebookPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (facebookPressed != null) {
+      return facebookPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return facebookPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return facebookPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (facebookPressed != null) {
+      return facebookPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FacebookLoginPressed implements AuthEvent {
+  const factory FacebookLoginPressed() = _$FacebookLoginPressed;
 }
 
 /// @nodoc
@@ -1510,11 +1781,13 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return onLoginPressedEvent();
@@ -1529,11 +1802,13 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return onLoginPressedEvent?.call();
@@ -1548,11 +1823,13 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1571,12 +1848,14 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return onLoginPressedEvent(this);
@@ -1591,11 +1870,13 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return onLoginPressedEvent?.call(this);
@@ -1610,11 +1891,13 @@ class _$OnLoginPressedEvent implements OnLoginPressedEvent {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1673,11 +1956,13 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return onRegisterPressedEvent();
@@ -1692,11 +1977,13 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return onRegisterPressedEvent?.call();
@@ -1711,11 +1998,13 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1734,12 +2023,14 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return onRegisterPressedEvent(this);
@@ -1754,11 +2045,13 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return onRegisterPressedEvent?.call(this);
@@ -1773,11 +2066,13 @@ class _$OnRegisterPressedEvent implements OnRegisterPressedEvent {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1836,11 +2131,13 @@ class _$LogOutPressed implements LogOutPressed {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return logOutPressed();
@@ -1855,11 +2152,13 @@ class _$LogOutPressed implements LogOutPressed {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return logOutPressed?.call();
@@ -1874,11 +2173,13 @@ class _$LogOutPressed implements LogOutPressed {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1897,12 +2198,14 @@ class _$LogOutPressed implements LogOutPressed {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return logOutPressed(this);
@@ -1917,11 +2220,13 @@ class _$LogOutPressed implements LogOutPressed {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return logOutPressed?.call(this);
@@ -1936,11 +2241,13 @@ class _$LogOutPressed implements LogOutPressed {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -1999,11 +2306,13 @@ class _$IsVerified implements IsVerified {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return isAccountVerified();
@@ -2018,11 +2327,13 @@ class _$IsVerified implements IsVerified {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return isAccountVerified?.call();
@@ -2037,11 +2348,13 @@ class _$IsVerified implements IsVerified {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -2060,12 +2373,14 @@ class _$IsVerified implements IsVerified {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return isAccountVerified(this);
@@ -2080,11 +2395,13 @@ class _$IsVerified implements IsVerified {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return isAccountVerified?.call(this);
@@ -2099,11 +2416,13 @@ class _$IsVerified implements IsVerified {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -2116,6 +2435,181 @@ class _$IsVerified implements IsVerified {
 
 abstract class IsVerified implements AuthEvent {
   const factory IsVerified() = _$IsVerified;
+}
+
+/// @nodoc
+abstract class _$$VerifyAccountCopyWith<$Res> {
+  factory _$$VerifyAccountCopyWith(
+          _$VerifyAccount value, $Res Function(_$VerifyAccount) then) =
+      __$$VerifyAccountCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyAccountCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$VerifyAccount>
+    implements _$$VerifyAccountCopyWith<$Res> {
+  __$$VerifyAccountCopyWithImpl(
+      _$VerifyAccount _value, $Res Function(_$VerifyAccount) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyAccount implements VerifyAccount {
+  const _$VerifyAccount();
+
+  @override
+  String toString() {
+    return 'AuthEvent.verifyAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyAccount);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String? emailStr) emailValidated,
+    required TResult Function(String confirm) confirmChanged,
+    required TResult Function(String? confirm) confirmValidated,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String? passwordStr) passwordValidated,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
+    required TResult Function() onLoginPressedEvent,
+    required TResult Function() onRegisterPressedEvent,
+    required TResult Function() logOutPressed,
+    required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
+    required TResult Function() isLoggedIn,
+  }) {
+    return verifyAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String? emailStr)? emailValidated,
+    TResult? Function(String confirm)? confirmChanged,
+    TResult? Function(String? confirm)? confirmValidated,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String? passwordStr)? passwordValidated,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
+    TResult? Function()? onLoginPressedEvent,
+    TResult? Function()? onRegisterPressedEvent,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
+    TResult? Function()? isLoggedIn,
+  }) {
+    return verifyAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String? emailStr)? emailValidated,
+    TResult Function(String confirm)? confirmChanged,
+    TResult Function(String? confirm)? confirmValidated,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String? passwordStr)? passwordValidated,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
+    TResult Function()? onLoginPressedEvent,
+    TResult Function()? onRegisterPressedEvent,
+    TResult Function()? logOutPressed,
+    TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
+    TResult Function()? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (verifyAccount != null) {
+      return verifyAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(EmailValidated value) emailValidated,
+    required TResult Function(ConfirmChanged value) confirmChanged,
+    required TResult Function(ConfirmValidated value) confirmValidated,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(PasswordValidated value) passwordValidated,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
+    required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
+    required TResult Function(OnRegisterPressedEvent value)
+        onRegisterPressedEvent,
+    required TResult Function(LogOutPressed value) logOutPressed,
+    required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(IsLoggedIn value) isLoggedIn,
+  }) {
+    return verifyAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(EmailValidated value)? emailValidated,
+    TResult? Function(ConfirmChanged value)? confirmChanged,
+    TResult? Function(ConfirmValidated value)? confirmValidated,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(PasswordValidated value)? passwordValidated,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
+    TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(IsLoggedIn value)? isLoggedIn,
+  }) {
+    return verifyAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(EmailValidated value)? emailValidated,
+    TResult Function(ConfirmChanged value)? confirmChanged,
+    TResult Function(ConfirmValidated value)? confirmValidated,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(PasswordValidated value)? passwordValidated,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
+    TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
+    TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(IsLoggedIn value)? isLoggedIn,
+    required TResult orElse(),
+  }) {
+    if (verifyAccount != null) {
+      return verifyAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyAccount implements AuthEvent {
+  const factory VerifyAccount() = _$VerifyAccount;
 }
 
 /// @nodoc
@@ -2162,11 +2656,13 @@ class _$IsLoggedIn implements IsLoggedIn {
     required TResult Function(String? confirm) confirmValidated,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String? passwordStr) passwordValidated,
-    required TResult Function() verifyAccount,
+    required TResult Function() googlePressed,
+    required TResult Function() facebookPressed,
     required TResult Function() onLoginPressedEvent,
     required TResult Function() onRegisterPressedEvent,
     required TResult Function() logOutPressed,
     required TResult Function() isAccountVerified,
+    required TResult Function() verifyAccount,
     required TResult Function() isLoggedIn,
   }) {
     return isLoggedIn();
@@ -2181,11 +2677,13 @@ class _$IsLoggedIn implements IsLoggedIn {
     TResult? Function(String? confirm)? confirmValidated,
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String? passwordStr)? passwordValidated,
-    TResult? Function()? verifyAccount,
+    TResult? Function()? googlePressed,
+    TResult? Function()? facebookPressed,
     TResult? Function()? onLoginPressedEvent,
     TResult? Function()? onRegisterPressedEvent,
     TResult? Function()? logOutPressed,
     TResult? Function()? isAccountVerified,
+    TResult? Function()? verifyAccount,
     TResult? Function()? isLoggedIn,
   }) {
     return isLoggedIn?.call();
@@ -2200,11 +2698,13 @@ class _$IsLoggedIn implements IsLoggedIn {
     TResult Function(String? confirm)? confirmValidated,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String? passwordStr)? passwordValidated,
-    TResult Function()? verifyAccount,
+    TResult Function()? googlePressed,
+    TResult Function()? facebookPressed,
     TResult Function()? onLoginPressedEvent,
     TResult Function()? onRegisterPressedEvent,
     TResult Function()? logOutPressed,
     TResult Function()? isAccountVerified,
+    TResult Function()? verifyAccount,
     TResult Function()? isLoggedIn,
     required TResult orElse(),
   }) {
@@ -2223,12 +2723,14 @@ class _$IsLoggedIn implements IsLoggedIn {
     required TResult Function(ConfirmValidated value) confirmValidated,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(PasswordValidated value) passwordValidated,
-    required TResult Function(VerifyAccount value) verifyAccount,
+    required TResult Function(GoogleLoginPressed value) googlePressed,
+    required TResult Function(FacebookLoginPressed value) facebookPressed,
     required TResult Function(OnLoginPressedEvent value) onLoginPressedEvent,
     required TResult Function(OnRegisterPressedEvent value)
         onRegisterPressedEvent,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(IsVerified value) isAccountVerified,
+    required TResult Function(VerifyAccount value) verifyAccount,
     required TResult Function(IsLoggedIn value) isLoggedIn,
   }) {
     return isLoggedIn(this);
@@ -2243,11 +2745,13 @@ class _$IsLoggedIn implements IsLoggedIn {
     TResult? Function(ConfirmValidated value)? confirmValidated,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(PasswordValidated value)? passwordValidated,
-    TResult? Function(VerifyAccount value)? verifyAccount,
+    TResult? Function(GoogleLoginPressed value)? googlePressed,
+    TResult? Function(FacebookLoginPressed value)? facebookPressed,
     TResult? Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult? Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult? Function(LogOutPressed value)? logOutPressed,
     TResult? Function(IsVerified value)? isAccountVerified,
+    TResult? Function(VerifyAccount value)? verifyAccount,
     TResult? Function(IsLoggedIn value)? isLoggedIn,
   }) {
     return isLoggedIn?.call(this);
@@ -2262,11 +2766,13 @@ class _$IsLoggedIn implements IsLoggedIn {
     TResult Function(ConfirmValidated value)? confirmValidated,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(PasswordValidated value)? passwordValidated,
-    TResult Function(VerifyAccount value)? verifyAccount,
+    TResult Function(GoogleLoginPressed value)? googlePressed,
+    TResult Function(FacebookLoginPressed value)? facebookPressed,
     TResult Function(OnLoginPressedEvent value)? onLoginPressedEvent,
     TResult Function(OnRegisterPressedEvent value)? onRegisterPressedEvent,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(IsVerified value)? isAccountVerified,
+    TResult Function(VerifyAccount value)? verifyAccount,
     TResult Function(IsLoggedIn value)? isLoggedIn,
     required TResult orElse(),
   }) {

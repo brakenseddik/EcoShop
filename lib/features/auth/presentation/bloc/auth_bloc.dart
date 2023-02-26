@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -12,8 +13,7 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc(this.authUseCases) : super(AuthState.initial()) {
-    on<LogOutPressed>(_onLogOut);
+  AuthBloc(this._authUseCases) : super(AuthState.initial()) {
     on<EmailChanged>(_onEmailChanged);
     on<EmailValidated>(_onEmailValidated);
     on<PasswordValidated>(_onPassValidated);
@@ -21,15 +21,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<ConfirmValidated>(_onConfirmValidated);
     on<PasswordChanged>(_onPassChanged);
     on<OnLoginPressedEvent>(_onLogin);
+    on<GoogleLoginPressed>(_onGoogleSignIn);
+    on<FacebookLoginPressed>(_onFacebookSignIn);
     on<OnRegisterPressedEvent>(_onRegister);
+    on<LogOutPressed>(_onLogOut);
     on<IsVerified>(_onIsVerified);
     on<VerifyAccount>(_onVerifyAccount);
     on<IsLoggedIn>(_onLoggedIn);
   }
-  final AuthUseCases authUseCases;
+  final AuthUseCases _authUseCases;
 
   FutureOr<void> _onLogOut(LogOutPressed event, Emitter<AuthState> emit) async {
-    await authUseCases.signOut();
+    await _authUseCases.signOut();
     emit(state.copyWith(isLoading: false, logoutSuccessOrFailure: true));
   }
 
@@ -37,7 +40,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       OnLoginPressedEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(isLoading: true));
     final res =
-        await authUseCases.login(email: state.email, password: state.password);
+        await _authUseCases.login(email: state.email, password: state.password);
     emit(state.copyWith(
         isLoading: false,
         loginSuccessOrFailure: some(res),
@@ -47,20 +50,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onRegister(
       OnRegisterPressedEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(isLoading: true));
-    final res = await authUseCases.register(
+    final res = await _authUseCases.register(
         email: state.email, password: state.password);
     emit(state.copyWith(isLoading: false, registerSuccessOrFailure: some(res)));
   }
 
-  FutureOr<void> _onIsVerified(IsVerified event, Emitter<AuthState> emit) {
-    final res = authUseCases.isEmailVerified();
+  FutureOr<void> _onIsVerified(
+      IsVerified event, Emitter<AuthState> emit) async {
+    final res = await _authUseCases.isAccountVerified();
+    log('result of verification is :  $res');
     emit(state.copyWith(
       isVerified: res == true,
     ));
   }
 
-  FutureOr<void> _onLoggedIn(IsLoggedIn event, Emitter<AuthState> emit) {
-    final res = authUseCases.isLoggedIn();
+  FutureOr<void> _onLoggedIn(IsLoggedIn event, Emitter<AuthState> emit) async {
+    final res = _authUseCases.isLoggedIn();
     emit(state.copyWith(isLoggedIn: res));
   }
 
@@ -94,7 +99,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onVerifyAccount(
-      VerifyAccount event, Emitter<AuthState> emit) {
-    // final res= authUseCases
+      VerifyAccount event, Emitter<AuthState> emit) async {
+    await _authUseCases.verifyAccount();
+  }
+
+  Future<FutureOr<void>> _onGoogleSignIn(
+      GoogleLoginPressed event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(
+      isLoading: true,
+    ));
+    final res = await _authUseCases.googleSignIn();
+    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
+  }
+
+  FutureOr<void> _onFacebookSignIn(
+      FacebookLoginPressed event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(
+      isLoading: true,
+    ));
+    final res = await _authUseCases.facebookSignIn();
+    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
   }
 }
