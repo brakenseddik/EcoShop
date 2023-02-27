@@ -1,5 +1,5 @@
 import 'package:fake_store/core/resources/assets_manager.dart';
-import 'package:fake_store/core/resources/values_manager.dart';
+import 'package:fake_store/core/resources/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -7,16 +7,14 @@ Future showAnimatedLoader(context) {
   return showDialog(
       context: context,
       builder: (context) {
-        return SizedBox.square(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Lottie.asset(AssetsManager.loadingAnimation),
-              const SizedBox(
-                height: ValuesManager.s8,
-              ),
-              const Text('Loading...')
-            ],
+        return Dialog(
+          insetPadding: const EdgeInsets.symmetric(horizontal: 100),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          backgroundColor: ColorsManager.white,
+          child: SizedBox.square(
+            dimension: 150,
+            child: Lottie.asset(AssetsManager.loadingAnimation, height: 100),
           ),
         );
       });

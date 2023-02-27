@@ -38,7 +38,7 @@ class AuthUseCases {
     return _authRepository.isAccountVerified();
   }
 
-  bool isLoggedIn() {
+  Future<bool> isLoggedIn() {
     return _authRepository.isLoggedIn();
   }
 

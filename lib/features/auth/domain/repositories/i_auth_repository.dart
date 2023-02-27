@@ -16,5 +16,5 @@ abstract class IAuthRepository {
   Future<void> signOut();
   Future<bool?> isAccountVerified();
   Future<void> verifyEmail();
-  bool isLoggedIn();
+  Future<bool> isLoggedIn();
 }

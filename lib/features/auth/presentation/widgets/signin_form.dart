@@ -7,15 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInForm extends StatelessWidget {
-  SignInForm({super.key});
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthBloc, AuthState>(
-      listener: (context, state) {},
-      listenWhen: (p, c) {
-        return p.isLoading != c.isLoading;
-      },
+    return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return Form(
             child: SingleChildScrollView(

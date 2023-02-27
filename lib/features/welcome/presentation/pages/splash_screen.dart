@@ -40,14 +40,14 @@ class _SplashPageState extends State<SplashPage> {
           if (!state.isLoggedIn) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const LoginPageRoute(),
-                  predicate: (route) => true);
+                  predicate: (route) => false);
             });
           } else if (state.isVerified) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const HomePageRoute(),
                   predicate: (route) => true);
             });
-          } else {
+          } else if (!state.isVerified) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const VerifyPageRoute(),
                   predicate: (route) => true);

@@ -26,7 +26,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LogOutPressed>(_onLogOut);
     on<IsVerified>(_onIsVerified);
     on<VerifyAccount>(_onVerifyAccount);
-    on<IsLoggedIn>(_onLoggedIn);
+    on<IsLoggedIn>(_onIsLoggedIn);
   }
   final AuthUseCases _authUseCases;
 
@@ -63,9 +63,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     ));
   }
 
-  FutureOr<void> _onLoggedIn(IsLoggedIn event, Emitter<AuthState> emit) async {
-    final res = _authUseCases.isLoggedIn();
-    emit(state.copyWith(isLoggedIn: res));
+  FutureOr<void> _onIsLoggedIn(
+      IsLoggedIn event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final res = await _authUseCases.isLoggedIn();
+    emit(state.copyWith(isLoading: false, isLoggedIn: res));
   }
 
   FutureOr<void> _onEmailChanged(EmailChanged event, Emitter<AuthState> emit) {

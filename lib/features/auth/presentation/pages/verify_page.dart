@@ -9,7 +9,6 @@ import 'package:fake_store/features/core/components/logo_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class VerifyPage extends StatefulWidget {
   const VerifyPage({Key? key}) : super(key: key);
@@ -31,7 +30,6 @@ class _VerifyPageState extends State<VerifyPage> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listenWhen: (p, c) => p.isVerified != c.isVerified,
         listener: (context, state) {
-          Fluttertoast.showToast(msg: 'finally ${state.isVerified}');
           if (state.isVerified) {
             context.router.pushAndPopUntil(
                 const CongratsVerificationPageRoute(),
@@ -55,7 +53,7 @@ class _VerifyPageState extends State<VerifyPage> {
                   height: ValuesManager.s16,
                 ),
                 Text(
-                  'we have sent you an email to ${locator<FirebaseAuth>().currentUser!.email}. please verify your email',
+                  'we have sent you an email to ${locator<FirebaseAuth>().currentUser?.email}. please verify your email',
                   textAlign: TextAlign.center,
                   style: context.textTheme.bodyLarge,
                 ),

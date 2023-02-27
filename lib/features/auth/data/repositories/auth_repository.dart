@@ -123,7 +123,8 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  bool isLoggedIn() {
+  Future<bool> isLoggedIn() async {
+    await _firebaseAuth.currentUser?.reload();
     return _firebaseAuth.currentUser != null;
   }
 }
