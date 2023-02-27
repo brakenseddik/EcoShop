@@ -22,9 +22,9 @@ void main() async {
 }
 
 class App extends StatelessWidget {
-  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   App({super.key});
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
@@ -40,11 +40,7 @@ class App extends StatelessWidget {
                 [FirebaseAnalyticsObserver(analytics: App.analytics)]),
         routeInformationParser: _appRouter.defaultRouteParser(),
         theme: ThemesManager.lightTheme,
-        supportedLocales: const [
-          Locale('en'),
-          Locale('fr'),
-          Locale('ar'),
-        ],
+        supportedLocales: AppLocalizations.supportedLocales ,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

@@ -66,7 +66,7 @@ class AuthRepository implements IAuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
     await _googleSignIn.signOut();
-    await _facebookAuth.logOut();
+    // await _facebookAuth.logOut();
   }
 
   @override
@@ -90,7 +90,7 @@ class AuthRepository implements IAuthRepository {
     try {
       final googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
-        return left(const Failure.authenticationFailure());
+        return left(const Failure.abortAuthentication());
       }
 
       final googleAuthentication = await googleUser.authentication;
@@ -102,8 +102,8 @@ class AuthRepository implements IAuthRepository {
 
       await _firebaseAuth.signInWithCredential(authCredential);
       return right(_firebaseAuth.currentUser);
-    } on FirebaseAuthException catch (_) {
-      return left(const Failure.serverFailure());
+    } on FirebaseAuthException catch (e) {
+      return left(Failure.customFailureWithMessage(e.message ?? ''));
     }
   }
 

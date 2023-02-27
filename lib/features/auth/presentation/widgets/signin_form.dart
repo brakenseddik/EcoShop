@@ -1,4 +1,3 @@
-import 'package:fake_store/core/exceptions/failure.dart';
 import 'package:fake_store/core/resources/values_manager.dart';
 import 'package:fake_store/core/utils/validators.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
@@ -6,7 +5,6 @@ import 'package:fake_store/features/auth/presentation/widgets/default_textfield.
 import 'package:fake_store/features/core/components/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class SignInForm extends StatelessWidget {
   SignInForm({super.key});
@@ -14,27 +12,9 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
-      listener: (context, state) {
-        state.loginSuccessOrFailure.fold(() => {}, (a) {
-          return a.fold(
-              (l) => Fluttertoast.showToast(
-                    msg: l.map(
-                      serverFailure: (m) => m.message ?? 'Server issue',
-                      customFailureWithMessage: (m) => m.message,
-                      unknownFailure: (m) => 'Unknown error',
-                      internetConnectionFailure: (m) =>
-                          'Internet Connection Failure',
-                      tooManyRequests: (m) => 'Too Many Requests',
-                      authenticationFailure: (m) => 'Authentication Failure',
-                      permissionDenied: (ms) => ms.toString(),
-                      abortAuthentication: (AbortAuth value) {
-                        return 'User cancelled auth';
-                      },
-                    ),
-                  ), (r) {
-            return Fluttertoast.showToast(msg: r!.emailVerified.toString());
-          });
-        });
+      listener: (context, state) {},
+      listenWhen: (p, c) {
+        return p.isLoading != c.isLoading;
       },
       builder: (context, state) {
         return Form(

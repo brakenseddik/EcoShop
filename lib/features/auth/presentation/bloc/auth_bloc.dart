@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -32,6 +31,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthUseCases _authUseCases;
 
   FutureOr<void> _onLogOut(LogOutPressed event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(isLoading: true));
     await _authUseCases.signOut();
     emit(state.copyWith(isLoading: false, logoutSuccessOrFailure: true));
   }
@@ -42,9 +42,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final res =
         await _authUseCases.login(email: state.email, password: state.password);
     emit(state.copyWith(
-        isLoading: false,
-        loginSuccessOrFailure: some(res),
-        showErrorMessages: res.fold((l) => true, (r) => false)));
+      isLoading: false,
+      loginSuccessOrFailure: some(res),
+    ));
   }
 
   FutureOr<void> _onRegister(
@@ -58,7 +58,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onIsVerified(
       IsVerified event, Emitter<AuthState> emit) async {
     final res = await _authUseCases.isAccountVerified();
-    log('result of verification is :  $res');
     emit(state.copyWith(
       isVerified: res == true,
     ));
