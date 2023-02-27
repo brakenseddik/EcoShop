@@ -13,6 +13,7 @@ class Failure with _$Failure {
       CustomFailureWithMessage;
 
   const factory Failure.unknownFailure() = UnknownFailure;
+  const factory Failure.abortAuthentication() = AbortAuth;
 
   const factory Failure.internetConnectionFailure() = InternetConnectionFailure;
 

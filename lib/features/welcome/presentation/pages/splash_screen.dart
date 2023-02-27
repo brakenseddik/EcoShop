@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:fake_store/core/extensions/context_extensions.dart';
 import 'package:fake_store/core/resources/assets_manager.dart';
@@ -28,7 +26,6 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
-        log('state is : ${state.isSeen}');
         if (!state.isSeen) {
           Future.delayed(const Duration(seconds: 3), () {
             context.router.push(const OnBoardingPageRoute());
@@ -39,19 +36,22 @@ class _SplashPageState extends State<SplashPage> {
       },
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
+          context.read<AuthBloc>().add(const IsVerified());
           if (!state.isLoggedIn) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const LoginPageRoute(),
-                  predicate: (route) => false);
+                  predicate: (route) => true);
+            });
+          } else if (state.isVerified) {
+            Future.delayed(const Duration(seconds: 3), () {
+              context.router.pushAndPopUntil(const HomePageRoute(),
+                  predicate: (route) => true);
             });
           } else {
-            context.read<AuthBloc>().add(const IsVerified());
-            if (!state.isVerified) {
+            Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const VerifyPageRoute(),
-                  predicate: (route) => false);
-            } else {
-              //visit home
-            }
+                  predicate: (route) => true);
+            });
           }
         },
         child: Scaffold(

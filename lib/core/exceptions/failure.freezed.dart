@@ -21,6 +21,7 @@ mixin _$Failure {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -32,6 +33,7 @@ mixin _$Failure {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -43,6 +45,7 @@ mixin _$Failure {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -56,6 +59,7 @@ mixin _$Failure {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -69,6 +73,7 @@ mixin _$Failure {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -81,6 +86,7 @@ mixin _$Failure {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -175,6 +181,7 @@ class _$ServerFailure implements ServerFailure {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -189,6 +196,7 @@ class _$ServerFailure implements ServerFailure {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -203,6 +211,7 @@ class _$ServerFailure implements ServerFailure {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -222,6 +231,7 @@ class _$ServerFailure implements ServerFailure {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -238,6 +248,7 @@ class _$ServerFailure implements ServerFailure {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -253,6 +264,7 @@ class _$ServerFailure implements ServerFailure {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -345,6 +357,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -359,6 +372,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -373,6 +387,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -392,6 +407,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -408,6 +424,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -423,6 +440,7 @@ class _$CustomFailureWithMessage implements CustomFailureWithMessage {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -488,6 +506,7 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -502,6 +521,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -516,6 +536,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -535,6 +556,7 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -551,6 +573,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -566,6 +589,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -582,6 +606,149 @@ class _$UnknownFailure implements UnknownFailure {
 
 abstract class UnknownFailure implements Failure {
   const factory UnknownFailure() = _$UnknownFailure;
+}
+
+/// @nodoc
+abstract class _$$AbortAuthCopyWith<$Res> {
+  factory _$$AbortAuthCopyWith(
+          _$AbortAuth value, $Res Function(_$AbortAuth) then) =
+      __$$AbortAuthCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AbortAuthCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$AbortAuth>
+    implements _$$AbortAuthCopyWith<$Res> {
+  __$$AbortAuthCopyWithImpl(
+      _$AbortAuth _value, $Res Function(_$AbortAuth) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AbortAuth implements AbortAuth {
+  const _$AbortAuth();
+
+  @override
+  String toString() {
+    return 'Failure.abortAuthentication()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AbortAuth);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? message) serverFailure,
+    required TResult Function(String message) customFailureWithMessage,
+    required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
+    required TResult Function() internetConnectionFailure,
+    required TResult Function() tooManyRequests,
+    required TResult Function() authenticationFailure,
+    required TResult Function() permissionDenied,
+  }) {
+    return abortAuthentication();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? message)? serverFailure,
+    TResult? Function(String message)? customFailureWithMessage,
+    TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
+    TResult? Function()? internetConnectionFailure,
+    TResult? Function()? tooManyRequests,
+    TResult? Function()? authenticationFailure,
+    TResult? Function()? permissionDenied,
+  }) {
+    return abortAuthentication?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? message)? serverFailure,
+    TResult Function(String message)? customFailureWithMessage,
+    TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
+    TResult Function()? internetConnectionFailure,
+    TResult Function()? tooManyRequests,
+    TResult Function()? authenticationFailure,
+    TResult Function()? permissionDenied,
+    required TResult orElse(),
+  }) {
+    if (abortAuthentication != null) {
+      return abortAuthentication();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(CustomFailureWithMessage value)
+        customFailureWithMessage,
+    required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
+    required TResult Function(InternetConnectionFailure value)
+        internetConnectionFailure,
+    required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(AuthenticationFailure value)
+        authenticationFailure,
+    required TResult Function(PermissionDenied value) permissionDenied,
+  }) {
+    return abortAuthentication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
+    TResult? Function(InternetConnectionFailure value)?
+        internetConnectionFailure,
+    TResult? Function(TooManyRequests value)? tooManyRequests,
+    TResult? Function(AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+  }) {
+    return abortAuthentication?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
+    TResult Function(InternetConnectionFailure value)?
+        internetConnectionFailure,
+    TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(AuthenticationFailure value)? authenticationFailure,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    required TResult orElse(),
+  }) {
+    if (abortAuthentication != null) {
+      return abortAuthentication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AbortAuth implements Failure {
+  const factory AbortAuth() = _$AbortAuth;
 }
 
 /// @nodoc
@@ -627,6 +794,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -641,6 +809,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -655,6 +824,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -674,6 +844,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -690,6 +861,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -705,6 +877,7 @@ class _$InternetConnectionFailure implements InternetConnectionFailure {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -764,6 +937,7 @@ class _$TooManyRequests implements TooManyRequests {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -778,6 +952,7 @@ class _$TooManyRequests implements TooManyRequests {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -792,6 +967,7 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -811,6 +987,7 @@ class _$TooManyRequests implements TooManyRequests {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -827,6 +1004,7 @@ class _$TooManyRequests implements TooManyRequests {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -842,6 +1020,7 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -901,6 +1080,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -915,6 +1095,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -929,6 +1110,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -948,6 +1130,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -964,6 +1147,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -979,6 +1163,7 @@ class _$AuthenticationFailure implements AuthenticationFailure {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
@@ -1038,6 +1223,7 @@ class _$PermissionDenied implements PermissionDenied {
     required TResult Function(String? message) serverFailure,
     required TResult Function(String message) customFailureWithMessage,
     required TResult Function() unknownFailure,
+    required TResult Function() abortAuthentication,
     required TResult Function() internetConnectionFailure,
     required TResult Function() tooManyRequests,
     required TResult Function() authenticationFailure,
@@ -1052,6 +1238,7 @@ class _$PermissionDenied implements PermissionDenied {
     TResult? Function(String? message)? serverFailure,
     TResult? Function(String message)? customFailureWithMessage,
     TResult? Function()? unknownFailure,
+    TResult? Function()? abortAuthentication,
     TResult? Function()? internetConnectionFailure,
     TResult? Function()? tooManyRequests,
     TResult? Function()? authenticationFailure,
@@ -1066,6 +1253,7 @@ class _$PermissionDenied implements PermissionDenied {
     TResult Function(String? message)? serverFailure,
     TResult Function(String message)? customFailureWithMessage,
     TResult Function()? unknownFailure,
+    TResult Function()? abortAuthentication,
     TResult Function()? internetConnectionFailure,
     TResult Function()? tooManyRequests,
     TResult Function()? authenticationFailure,
@@ -1085,6 +1273,7 @@ class _$PermissionDenied implements PermissionDenied {
     required TResult Function(CustomFailureWithMessage value)
         customFailureWithMessage,
     required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(AbortAuth value) abortAuthentication,
     required TResult Function(InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(TooManyRequests value) tooManyRequests,
@@ -1101,6 +1290,7 @@ class _$PermissionDenied implements PermissionDenied {
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(AbortAuth value)? abortAuthentication,
     TResult? Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult? Function(TooManyRequests value)? tooManyRequests,
@@ -1116,6 +1306,7 @@ class _$PermissionDenied implements PermissionDenied {
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailureWithMessage value)? customFailureWithMessage,
     TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(AbortAuth value)? abortAuthentication,
     TResult Function(InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(TooManyRequests value)? tooManyRequests,
