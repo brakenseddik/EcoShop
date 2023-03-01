@@ -16,7 +16,7 @@ class ThemesManager {
       appBarTheme: AppBarTheme(
           centerTitle: true,
           color: ColorsManager.secondaryColor,
-          elevation: 4,
+          elevation: 0.0,
           shadowColor: ColorsManager.primaryOpacity70,
           titleTextStyle:
               GoogleFonts.roboto(color: ColorsManager.white, fontSize: 16)),

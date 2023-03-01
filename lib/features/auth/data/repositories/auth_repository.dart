@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:fake_store/core/constants/constants.dart';
@@ -53,6 +54,7 @@ class AuthRepository implements IAuthRepository {
         final providers =
             await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
         if (providers.contains(AppConstants.googleCom)) {
+          // recheck this on ewhen user refuses
           await signInWithGoogle();
           _firebaseAuth.currentUser?.linkWithCredential(credential);
         }
@@ -66,7 +68,7 @@ class AuthRepository implements IAuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
     await _googleSignIn.signOut();
-    // await _facebookAuth.logOut();
+    await _facebookAuth.logOut();
   }
 
   @override
@@ -119,6 +121,7 @@ class AuthRepository implements IAuthRepository {
   @override
   Future<bool?> isAccountVerified() async {
     await _firebaseAuth.currentUser?.reload();
+    log('message :  ${_firebaseAuth.currentUser?.emailVerified}');
     return _firebaseAuth.currentUser?.emailVerified;
   }
 

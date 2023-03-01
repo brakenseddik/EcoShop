@@ -5,7 +5,6 @@ import 'package:fake_store/core/resources/values_manager.dart';
 import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/auth/presentation/widgets/signin_form.dart';
-import 'package:fake_store/features/core/components/loading_animator.dart';
 import 'package:fake_store/features/core/components/logo_widget.dart';
 import 'package:fake_store/features/core/components/social_button.dart';
 import 'package:flutter/material.dart';
@@ -53,15 +52,15 @@ class LoginPage extends StatelessWidget {
             });
           });
 
-          if (state.isLoading) {
-            return SchedulerBinding.instance.addPostFrameCallback((_) async {
-              await showAnimatedLoader(context);
-            });
-          } else if (!state.isLoading) {
-            return SchedulerBinding.instance.addPostFrameCallback((_) {
-              Navigator.pop(context);
-            });
-          }
+          // if (state.isLoading) {
+          //   return SchedulerBinding.instance.addPostFrameCallback((_) async {
+          //     await showAnimatedLoader(context);
+          //   });
+          // } else if (!state.isLoading) {
+          //   return SchedulerBinding.instance.addPostFrameCallback((_) {
+          //     Navigator.pop(context);
+          //   });
+          // }
         },
         buildWhen: (p, c) {
           return p.loginSuccessOrFailure != c.loginSuccessOrFailure;

@@ -1,5 +1,6 @@
 import 'package:fake_store/core/resources/assets_manager.dart';
 import 'package:fake_store/core/resources/colors_manager.dart';
+import 'package:fake_store/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -10,30 +11,33 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        leading: Image.asset(
-          AssetsManager.appIcon,
-          height: 28,
-          width: 28,
-          color: ColorsManager.primaryColor,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            AssetsManager.appIcon,
+            color: ColorsManager.primaryColor,
+          ),
         ),
         title: const TextField(
           decoration: InputDecoration(
               prefixIcon: Icon(Icons.search),
-              hintText: 'Search in Echoshop',
+              hintText: 'Search in EchoShop',
               border: InputBorder.none,
               fillColor: ColorsManager.white,
               filled: true),
         ),
       ),
+      body: const HomePage(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        shape: BeveledRectangleBorder(
-          side: const BorderSide(
-            color: ColorsManager.primaryColor,
-            width: 3,
-          ),
-          borderRadius: BorderRadius.circular(16),
-        ),
+        // shape: BeveledRectangleBorder(
+        //   side: const BorderSide(
+        //     color: ColorsManager.primaryColor,
+        //     width: 3,
+        //   ),
+        //   borderRadius: BorderRadius.circular(16),
+        // ),
+        elevation: 0.0,
         backgroundColor: ColorsManager.primaryColor,
         onPressed: () {},
         child: const Icon(Icons.messenger_outline),

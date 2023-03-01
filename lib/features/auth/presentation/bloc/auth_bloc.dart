@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:fake_store/core/constants/constants.dart';
 import 'package:fake_store/core/exceptions/failure.dart';
 import 'package:fake_store/core/utils/locator.dart';
 import 'package:fake_store/features/auth/domain/use_cases/auth_usecases.dart';
@@ -58,15 +59,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onIsVerified(
       IsVerified event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(isLoading: true));
     final res = await _authUseCases.isAccountVerified();
     emit(state.copyWith(
         isVerified: res == true,
+        isLoading: false,
         loggedInWithFb: locator<FirebaseAuth>()
                 .currentUser
                 ?.providerData
                 .first
                 .providerId ==
-            'facebook.com'));
+            AppConstants.facebookCom));
   }
 
   FutureOr<void> _onIsLoggedIn(

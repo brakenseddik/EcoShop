@@ -13,8 +13,9 @@ Future showAnimatedLoader(context) {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           backgroundColor: ColorsManager.white,
           child: SizedBox.square(
-            dimension: 150,
-            child: Lottie.asset(AssetsManager.loadingAnimation, height: 100),
+            dimension: 160,
+            child: Lottie.asset(AssetsManager.loadingAnimation,
+                height: 120, width: 140),
           ),
         );
       });
