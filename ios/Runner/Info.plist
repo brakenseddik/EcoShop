@@ -31,6 +31,22 @@
 			<string>com.example.fakeStore</string>
 		</dict>
 		<dict/>
+        <dict>
+            <key>CFBundleIdentifier</key>
+            <string></string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.811099349839-eivev3dg0ufbvvjq0g7rho2thjlv6uca</string>
+            </array>
+        </dict>
+        <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>fb2713389978901031</string>
+          </array>
+        </dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
@@ -57,28 +73,8 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleIdentifier</key>
-            <string></string>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>com.googleusercontent.apps.811099349839-eivev3dg0ufbvvjq0g7rho2thjlv6uca</string>
-            </array>
-        </dict>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>fb{your-app-id}</string>
-        </array>
-      </dict>
-    </array>
+	
+
     <key>FacebookAppID</key>
     <string>2713389978901031</string>
     <key>FacebookClientToken</key>

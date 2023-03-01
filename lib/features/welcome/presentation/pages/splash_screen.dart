@@ -42,7 +42,7 @@ class _SplashPageState extends State<SplashPage> {
         listener: (context, state) {
           context.read<AuthBloc>().add(const IsVerified());
           log('logged with FB: ${state.loggedInWithFb}');
-          log('user provider  :   ${locator<FirebaseAuth>().currentUser!.providerData}');
+          log('user provider  :   ${locator<FirebaseAuth>().currentUser?.providerData}');
           if (!state.isLoggedIn) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const LoginPageRoute(),
