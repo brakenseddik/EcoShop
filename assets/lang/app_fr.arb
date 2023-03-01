@@ -1,19 +1,22 @@
 {
-  "helloWorld": "Bonjour!!!",
-  "login": "Login",
-  "email": "Email",
-  "password": "Password",
-  "cancel": "Cancel",
-  "authenticate": "Authenticate",
-  "enterRecoveryCode": "Enter 21-character code",
-  "recoveryCode": "Recovery code",
-  "useRecoveryCode": "Use recovery code",
-  "twoFactorAuthentication": "Two-factor Authentication",
-  "enterTwoAuthFactorCode": "Enter your recovery code",
-  "ok": "Ok",
-  "folderName": "Folder name",
-  "bedLeveling":"Bed Leveling",
-  "studioPrinter":"Studio Printer",
-  "splashTitle": "Ecoshop Online Marketplace"
+"helloWorld": "Bonjour le monde !",
+"login": "Se connecter",
+"email": "Email",
+"password": "Mot de passe",
+"cancel": "Annuler",
+"authenticate": "S'authentifier",
+"enterRecoveryCode": "Entrez le code de 21 caractères",
+"recoveryCode": "Code de récupération",
+"useRecoveryCode": "Utiliser le code de récupération",
+"twoFactorAuthentication": "Authentification à deux facteurs",
+"enterTwoAuthFactorCode": "Entrez votre code de récupération",
+"ok": "Ok",
+"folderName": "Nom du dossier",
+"bedLeveling":"Mise à niveau du lit",
+"studioPrinter":"Imprimante Studio",
+"splashTitle": "Marché en ligne Ecoshop"
 }
+
+
+
 

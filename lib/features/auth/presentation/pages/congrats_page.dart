@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:fake_store/core/extensions/context_extensions.dart';
 import 'package:fake_store/core/resources/assets_manager.dart';
 import 'package:fake_store/core/resources/values_manager.dart';
+import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/features/core/components/default_button.dart';
 import 'package:flutter/material.dart';
 
@@ -36,12 +38,16 @@ class CongratsVerificationPage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: context.textTheme.bodyLarge,
             ),
-            SizedBox(
+            const SizedBox(
               height: ValuesManager.s64,
             ),
             DefaultButton(
-              text: 'Let\'s get started',
-              onPressed: () {},
+              text: "Let's get started",
+              onPressed: () {
+                context.router.pushAndPopUntil(const MainPageRoute(),
+                    predicate: (route) =>
+                        route.settings.name == MainPageRoute.name);
+              },
             )
           ],
         ),

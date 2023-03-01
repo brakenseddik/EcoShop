@@ -53,6 +53,12 @@ class _$AppRouter extends RootStackRouter {
         child: const CongratsVerificationPage(),
       );
     },
+    MainPageRoute.name: (routeData) {
+      return AdaptivePage<void>(
+        routeData: routeData,
+        child: const MainPage(),
+      );
+    },
     HomePageRoute.name: (routeData) {
       return AdaptivePage<void>(
         routeData: routeData,
@@ -88,8 +94,22 @@ class _$AppRouter extends RootStackRouter {
           path: '/congrats',
         ),
         RouteConfig(
-          HomePageRoute.name,
+          MainPageRoute.name,
           path: '/main',
+          children: [
+            RouteConfig(
+              '#redirect',
+              path: '',
+              parent: MainPageRoute.name,
+              redirectTo: 'home',
+              fullMatch: true,
+            ),
+            RouteConfig(
+              HomePageRoute.name,
+              path: 'home',
+              parent: MainPageRoute.name,
+            ),
+          ],
         ),
         RouteConfig(
           '*#redirect',
@@ -173,12 +193,25 @@ class CongratsVerificationPageRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [MainPage]
+class MainPageRoute extends PageRouteInfo<void> {
+  const MainPageRoute({List<PageRouteInfo>? children})
+      : super(
+          MainPageRoute.name,
+          path: '/main',
+          initialChildren: children,
+        );
+
+  static const String name = 'MainPageRoute';
+}
+
+/// generated route for
 /// [HomePage]
 class HomePageRoute extends PageRouteInfo<void> {
   const HomePageRoute()
       : super(
           HomePageRoute.name,
-          path: '/main',
+          path: 'home',
         );
 
   static const String name = 'HomePageRoute';

@@ -1,10 +1,14 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:fake_store/core/extensions/context_extensions.dart';
 import 'package:fake_store/core/resources/assets_manager.dart';
 import 'package:fake_store/core/resources/colors_manager.dart';
 import 'package:fake_store/core/routes/router.dart';
+import 'package:fake_store/core/utils/locator.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/welcome/presentation/manager/app_bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,14 +41,16 @@ class _SplashPageState extends State<SplashPage> {
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           context.read<AuthBloc>().add(const IsVerified());
+          log('logged with FB: ${state.loggedInWithFb}');
+          log('user provider  :   ${locator<FirebaseAuth>().currentUser!.providerData}');
           if (!state.isLoggedIn) {
             Future.delayed(const Duration(seconds: 3), () {
               context.router.pushAndPopUntil(const LoginPageRoute(),
                   predicate: (route) => false);
             });
-          } else if (state.isVerified) {
+          } else if (state.isVerified || state.loggedInWithFb) {
             Future.delayed(const Duration(seconds: 3), () {
-              context.router.pushAndPopUntil(const HomePageRoute(),
+              context.router.pushAndPopUntil(const MainPageRoute(),
                   predicate: (route) => true);
             });
           } else if (!state.isVerified) {

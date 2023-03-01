@@ -4,8 +4,10 @@ import 'package:fake_store/core/resources/values_manager.dart';
 import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fake_store/features/auth/presentation/widgets/signup_form.dart';
+import 'package:fake_store/features/core/components/loading_animator.dart';
 import 'package:fake_store/features/core/components/logo_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -16,12 +18,19 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
+        listenWhen: (p, c) {
+          return p.isLoading != c.isLoading ||
+              p.registerSuccessOrFailure != c.registerSuccessOrFailure;
+        },
+        buildWhen: (p, c) {
+          return p.registerSuccessOrFailure != c.registerSuccessOrFailure;
+        },
         listener: (context, state) {
           state.registerSuccessOrFailure.fold(
             () => {},
             (a) => a.fold(
               (failure) {
-                return Fluttertoast.showToast(
+                Fluttertoast.showToast(
                   toastLength: Toast.LENGTH_LONG,
                   msg: failure.map(
                     serverFailure: (m) => m.message ?? 'Server failure',
@@ -39,12 +48,24 @@ class RegisterPage extends StatelessWidget {
                 );
               },
               (response) {
-                return context.router.push(
-                  const VerifyPageRoute(),
-                );
+                return SchedulerBinding.instance
+                    .addPostFrameCallback((timeStamp) {
+                  context.router.push(
+                    const VerifyPageRoute(),
+                  );
+                });
               },
             ),
           );
+          if (state.isLoading) {
+            return SchedulerBinding.instance.addPostFrameCallback((_) async {
+              await showAnimatedLoader(context);
+            });
+          } else if (!state.isLoading) {
+            return SchedulerBinding.instance.addPostFrameCallback((_) {
+              Navigator.pop(context);
+            });
+          }
         },
         builder: (context, state) {
           return Padding(
@@ -73,9 +94,13 @@ class RegisterPage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: context.textTheme.bodyLarge,
                     ),
-                    const Spacer(),
+                    const SizedBox(
+                      height: ValuesManager.s32,
+                    ),
                     const SignUpForm(),
-                    const Spacer(),
+                    const SizedBox(
+                      height: ValuesManager.s32,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

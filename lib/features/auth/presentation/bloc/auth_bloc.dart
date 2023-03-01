@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:fake_store/core/exceptions/failure.dart';
+import 'package:fake_store/core/utils/locator.dart';
 import 'package:fake_store/features/auth/domain/use_cases/auth_usecases.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -42,9 +43,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final res =
         await _authUseCases.login(email: state.email, password: state.password);
     emit(state.copyWith(
-      isLoading: false,
-      loginSuccessOrFailure: some(res),
-    ));
+        isLoading: false,
+        loginSuccessOrFailure: some(res),
+        loggedInWithFb: false));
   }
 
   FutureOr<void> _onRegister(
@@ -59,8 +60,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       IsVerified event, Emitter<AuthState> emit) async {
     final res = await _authUseCases.isAccountVerified();
     emit(state.copyWith(
-      isVerified: res == true,
-    ));
+        isVerified: res == true,
+        loggedInWithFb: locator<FirebaseAuth>()
+                .currentUser
+                ?.providerData
+                .first
+                .providerId ==
+            'facebook.com'));
   }
 
   FutureOr<void> _onIsLoggedIn(
@@ -110,7 +116,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       isLoading: true,
     ));
     final res = await _authUseCases.googleSignIn();
-    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
+    emit(state.copyWith(
+        isLoading: false,
+        loginSuccessOrFailure: some(res),
+        loggedInWithFb: false));
   }
 
   FutureOr<void> _onFacebookSignIn(
@@ -119,6 +128,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       isLoading: true,
     ));
     final res = await _authUseCases.facebookSignIn();
-    emit(state.copyWith(isLoading: false, loginSuccessOrFailure: some(res)));
+    emit(state.copyWith(
+        isLoading: false,
+        loginSuccessOrFailure: some(res),
+        loggedInWithFb: res.fold((l) => false, (r) => true)));
   }
 }

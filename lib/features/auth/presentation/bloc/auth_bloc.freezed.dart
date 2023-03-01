@@ -2794,6 +2794,7 @@ mixin _$AuthState {
   bool get isEmailValid => throw _privateConstructorUsedError;
   bool get isPassValid => throw _privateConstructorUsedError;
   bool get isConfirmValid => throw _privateConstructorUsedError;
+  bool get loggedInWithFb => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isVerified => throw _privateConstructorUsedError;
   bool get isFormValidated => throw _privateConstructorUsedError;
@@ -2823,6 +2824,7 @@ abstract class $AuthStateCopyWith<$Res> {
       bool isEmailValid,
       bool isPassValid,
       bool isConfirmValid,
+      bool loggedInWithFb,
       bool showErrorMessages,
       bool isVerified,
       bool isFormValidated,
@@ -2855,6 +2857,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? isEmailValid = null,
     Object? isPassValid = null,
     Object? isConfirmValid = null,
+    Object? loggedInWithFb = null,
     Object? showErrorMessages = null,
     Object? isVerified = null,
     Object? isFormValidated = null,
@@ -2886,6 +2889,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       isConfirmValid: null == isConfirmValid
           ? _value.isConfirmValid
           : isConfirmValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loggedInWithFb: null == loggedInWithFb
+          ? _value.loggedInWithFb
+          : loggedInWithFb // ignore: cast_nullable_to_non_nullable
               as bool,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
@@ -2956,6 +2963,7 @@ abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
       bool isEmailValid,
       bool isPassValid,
       bool isConfirmValid,
+      bool loggedInWithFb,
       bool showErrorMessages,
       bool isVerified,
       bool isFormValidated,
@@ -2987,6 +2995,7 @@ class __$$_AuthStateCopyWithImpl<$Res>
     Object? isEmailValid = null,
     Object? isPassValid = null,
     Object? isConfirmValid = null,
+    Object? loggedInWithFb = null,
     Object? showErrorMessages = null,
     Object? isVerified = null,
     Object? isFormValidated = null,
@@ -3018,6 +3027,10 @@ class __$$_AuthStateCopyWithImpl<$Res>
       isConfirmValid: null == isConfirmValid
           ? _value.isConfirmValid
           : isConfirmValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      loggedInWithFb: null == loggedInWithFb
+          ? _value.loggedInWithFb
+          : loggedInWithFb // ignore: cast_nullable_to_non_nullable
               as bool,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
@@ -3072,6 +3085,7 @@ class _$_AuthState implements _AuthState {
       required this.isEmailValid,
       required this.isPassValid,
       required this.isConfirmValid,
+      required this.loggedInWithFb,
       required this.showErrorMessages,
       required this.isVerified,
       required this.isFormValidated,
@@ -3093,6 +3107,8 @@ class _$_AuthState implements _AuthState {
   final bool isPassValid;
   @override
   final bool isConfirmValid;
+  @override
+  final bool loggedInWithFb;
   @override
   final bool showErrorMessages;
   @override
@@ -3116,7 +3132,7 @@ class _$_AuthState implements _AuthState {
 
   @override
   String toString() {
-    return 'AuthState(isLoading: $isLoading, isLoggedIn: $isLoggedIn, isEmailValid: $isEmailValid, isPassValid: $isPassValid, isConfirmValid: $isConfirmValid, showErrorMessages: $showErrorMessages, isVerified: $isVerified, isFormValidated: $isFormValidated, logoutSuccessOrFailure: $logoutSuccessOrFailure, email: $email, password: $password, confirm: $confirm, loginSuccessOrFailure: $loginSuccessOrFailure, registerSuccessOrFailure: $registerSuccessOrFailure, error: $error)';
+    return 'AuthState(isLoading: $isLoading, isLoggedIn: $isLoggedIn, isEmailValid: $isEmailValid, isPassValid: $isPassValid, isConfirmValid: $isConfirmValid, loggedInWithFb: $loggedInWithFb, showErrorMessages: $showErrorMessages, isVerified: $isVerified, isFormValidated: $isFormValidated, logoutSuccessOrFailure: $logoutSuccessOrFailure, email: $email, password: $password, confirm: $confirm, loginSuccessOrFailure: $loginSuccessOrFailure, registerSuccessOrFailure: $registerSuccessOrFailure, error: $error)';
   }
 
   @override
@@ -3134,6 +3150,8 @@ class _$_AuthState implements _AuthState {
                 other.isPassValid == isPassValid) &&
             (identical(other.isConfirmValid, isConfirmValid) ||
                 other.isConfirmValid == isConfirmValid) &&
+            (identical(other.loggedInWithFb, loggedInWithFb) ||
+                other.loggedInWithFb == loggedInWithFb) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages) &&
             (identical(other.isVerified, isVerified) ||
@@ -3162,6 +3180,7 @@ class _$_AuthState implements _AuthState {
       isEmailValid,
       isPassValid,
       isConfirmValid,
+      loggedInWithFb,
       showErrorMessages,
       isVerified,
       isFormValidated,
@@ -3187,6 +3206,7 @@ abstract class _AuthState implements AuthState {
       required final bool isEmailValid,
       required final bool isPassValid,
       required final bool isConfirmValid,
+      required final bool loggedInWithFb,
       required final bool showErrorMessages,
       required final bool isVerified,
       required final bool isFormValidated,
@@ -3208,6 +3228,8 @@ abstract class _AuthState implements AuthState {
   bool get isPassValid;
   @override
   bool get isConfirmValid;
+  @override
+  bool get loggedInWithFb;
   @override
   bool get showErrorMessages;
   @override

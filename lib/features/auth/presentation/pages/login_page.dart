@@ -45,9 +45,9 @@ class LoginPage extends StatelessWidget {
                     ), (r) {
               if (!state.isLoading) {
                 return SchedulerBinding.instance.addPostFrameCallback((_) {
-                  context.router.pushAndPopUntil(const HomePageRoute(),
+                  context.router.pushAndPopUntil(const MainPageRoute(),
                       predicate: (route) =>
-                          route.settings.name == HomePageRoute.name);
+                          route.settings.name == MainPageRoute.name);
                 });
               }
             });
@@ -93,7 +93,9 @@ class LoginPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyLarge,
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    height: ValuesManager.s64,
+                  ),
                   const SignInForm(),
                   const SizedBox(
                     height: ValuesManager.s16,
@@ -120,7 +122,11 @@ class LoginPage extends StatelessWidget {
                       SocialLoginButton(
                         size: size,
                         title: 'Facebook',
-                        onPressed: () {},
+                        onPressed: () {
+                          context
+                              .read<AuthBloc>()
+                              .add(const FacebookLoginPressed());
+                        },
                         icon: AssetsManager.facebook,
                       ),
                       SocialLoginButton(
@@ -135,7 +141,9 @@ class LoginPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    height: ValuesManager.s32,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
