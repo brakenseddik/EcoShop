@@ -76,7 +76,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       IsLoggedIn event, Emitter<AuthState> emit) async {
     emit(state.copyWith(isLoading: true));
     final res = await _authUseCases.isLoggedIn();
-    emit(state.copyWith(isLoading: false, isLoggedIn: res));
+    final res2 = await _authUseCases.isAccountVerified();
+    emit(state.copyWith(isLoading: false, isLoggedIn: res, isVerified: res2==true,  loggedInWithFb: locator<FirebaseAuth>()
+        .currentUser
+        ?.providerData
+        .first
+        .providerId ==
+        AppConstants.facebookCom) );
   }
 
   FutureOr<void> _onEmailChanged(EmailChanged event, Emitter<AuthState> emit) {

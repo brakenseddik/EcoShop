@@ -24,7 +24,6 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     context.read<AppBloc>().add(const OnCheckSeenCalled());
     context.read<AuthBloc>().add(const IsLoggedIn());
-    context.read<AuthBloc>().add(const IsVerified());
     super.initState();
   }
 
@@ -45,7 +44,7 @@ class _SplashPageState extends State<SplashPage> {
         ),
         BlocListener<AuthBloc, AuthState>(
           listenWhen: (p, c) =>
-              p.isVerified != c.isVerified || p.isLoggedIn != c.isLoggedIn,
+              p.isVerified != c.isVerified || p.isLoggedIn != c.isLoggedIn || p.isLoggedIn!=c.isLoggedIn,
           listener: (context, state) {
             checkRouting(state);
           },

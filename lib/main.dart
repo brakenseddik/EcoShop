@@ -4,6 +4,7 @@ import 'package:fake_store/core/routes/router.dart';
 import 'package:fake_store/core/utils/firebase_options.dart';
 import 'package:fake_store/core/utils/locator.dart';
 import 'package:fake_store/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:fake_store/features/home/presentation/bloc/products/products_bloc.dart';
 import 'package:fake_store/features/welcome/presentation/manager/app_bloc.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,6 +33,8 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<AuthBloc>.value(value: locator<AuthBloc>()),
         BlocProvider<AppBloc>.value(value: locator<AppBloc>()),
+        BlocProvider<ProductsBloc>.value(value: locator<ProductsBloc>()),
+
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
