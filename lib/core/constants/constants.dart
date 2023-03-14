@@ -7,7 +7,7 @@ class AppConstants {
   static const facebookCom = 'facebook.com';
   static const emailScope = 'email';
   static final Dio dio = Dio(BaseOptions(
-      baseUrl: 'https://apirewrite.simplyprint.io/',
+      baseUrl: 'https://dummyjson.com/',
       headers: <String, String>{
         'Content-Type': 'application/json;multipart/form-data',
         'Accept': 'application/json',

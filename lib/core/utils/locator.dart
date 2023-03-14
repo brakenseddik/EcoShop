@@ -49,7 +49,7 @@ void _injectRepositories() {
       locator<GoogleSignIn>(),
       locator<FacebookAuth>(),),);
 
-  locator.registerLazySingleton<IProductsRepository>(() => ProductsRepository());
+  locator.registerLazySingleton<IProductsRepository>(() => ProductsRepository(locator<HttpService>()));
 }
 
 Future<void> _injectServices() async {

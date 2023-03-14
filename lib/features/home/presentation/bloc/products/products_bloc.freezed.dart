@@ -19,32 +19,38 @@ mixin _$ProductsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onFetchCategories,
+    required TResult Function() onFetchProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onFetchCategories,
+    TResult? Function()? onFetchProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onFetchCategories,
+    TResult Function()? onFetchProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OnFetchCategoriesEvent value) onFetchCategories,
+    required TResult Function(OnFetchProductsEvent value) onFetchProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult? Function(OnFetchProductsEvent value)? onFetchProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult Function(OnFetchProductsEvent value)? onFetchProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onFetchCategories,
+    required TResult Function() onFetchProducts,
   }) {
     return onFetchCategories();
   }
@@ -115,6 +122,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onFetchCategories,
+    TResult? Function()? onFetchProducts,
   }) {
     return onFetchCategories?.call();
   }
@@ -123,6 +131,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onFetchCategories,
+    TResult Function()? onFetchProducts,
     required TResult orElse(),
   }) {
     if (onFetchCategories != null) {
@@ -135,6 +144,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OnFetchCategoriesEvent value) onFetchCategories,
+    required TResult Function(OnFetchProductsEvent value) onFetchProducts,
   }) {
     return onFetchCategories(this);
   }
@@ -143,6 +153,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult? Function(OnFetchProductsEvent value)? onFetchProducts,
   }) {
     return onFetchCategories?.call(this);
   }
@@ -151,6 +162,7 @@ class _$OnFetchCategoriesEvent implements OnFetchCategoriesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult Function(OnFetchProductsEvent value)? onFetchProducts,
     required TResult orElse(),
   }) {
     if (onFetchCategories != null) {
@@ -165,8 +177,112 @@ abstract class OnFetchCategoriesEvent implements ProductsEvent {
 }
 
 /// @nodoc
+abstract class _$$OnFetchProductsEventCopyWith<$Res> {
+  factory _$$OnFetchProductsEventCopyWith(_$OnFetchProductsEvent value,
+          $Res Function(_$OnFetchProductsEvent) then) =
+      __$$OnFetchProductsEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnFetchProductsEventCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$OnFetchProductsEvent>
+    implements _$$OnFetchProductsEventCopyWith<$Res> {
+  __$$OnFetchProductsEventCopyWithImpl(_$OnFetchProductsEvent _value,
+      $Res Function(_$OnFetchProductsEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnFetchProductsEvent implements OnFetchProductsEvent {
+  const _$OnFetchProductsEvent();
+
+  @override
+  String toString() {
+    return 'ProductsEvent.onFetchProducts()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnFetchProductsEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onFetchCategories,
+    required TResult Function() onFetchProducts,
+  }) {
+    return onFetchProducts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onFetchCategories,
+    TResult? Function()? onFetchProducts,
+  }) {
+    return onFetchProducts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onFetchCategories,
+    TResult Function()? onFetchProducts,
+    required TResult orElse(),
+  }) {
+    if (onFetchProducts != null) {
+      return onFetchProducts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnFetchCategoriesEvent value) onFetchCategories,
+    required TResult Function(OnFetchProductsEvent value) onFetchProducts,
+  }) {
+    return onFetchProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult? Function(OnFetchProductsEvent value)? onFetchProducts,
+  }) {
+    return onFetchProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnFetchCategoriesEvent value)? onFetchCategories,
+    TResult Function(OnFetchProductsEvent value)? onFetchProducts,
+    required TResult orElse(),
+  }) {
+    if (onFetchProducts != null) {
+      return onFetchProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnFetchProductsEvent implements ProductsEvent {
+  const factory OnFetchProductsEvent() = _$OnFetchProductsEvent;
+}
+
+/// @nodoc
 mixin _$ProductsState {
   List<String> get categories => throw _privateConstructorUsedError;
+  Option<Either<Failure, List<ProductModel>>>
+      get productsFetchSuccessOrFailure => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -180,7 +296,10 @@ abstract class $ProductsStateCopyWith<$Res> {
           ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
-  $Res call({List<String> categories, bool isLoading});
+  $Res call(
+      {List<String> categories,
+      Option<Either<Failure, List<ProductModel>>> productsFetchSuccessOrFailure,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -197,6 +316,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
   @override
   $Res call({
     Object? categories = null,
+    Object? productsFetchSuccessOrFailure = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
@@ -204,6 +324,10 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      productsFetchSuccessOrFailure: null == productsFetchSuccessOrFailure
+          ? _value.productsFetchSuccessOrFailure
+          : productsFetchSuccessOrFailure // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<ProductModel>>>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -220,7 +344,10 @@ abstract class _$$_ProductsStateCopyWith<$Res>
       __$$_ProductsStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String> categories, bool isLoading});
+  $Res call(
+      {List<String> categories,
+      Option<Either<Failure, List<ProductModel>>> productsFetchSuccessOrFailure,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -235,6 +362,7 @@ class __$$_ProductsStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? categories = null,
+    Object? productsFetchSuccessOrFailure = null,
     Object? isLoading = null,
   }) {
     return _then(_$_ProductsState(
@@ -242,6 +370,10 @@ class __$$_ProductsStateCopyWithImpl<$Res>
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      productsFetchSuccessOrFailure: null == productsFetchSuccessOrFailure
+          ? _value.productsFetchSuccessOrFailure
+          : productsFetchSuccessOrFailure // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<ProductModel>>>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -254,7 +386,9 @@ class __$$_ProductsStateCopyWithImpl<$Res>
 
 class _$_ProductsState implements _ProductsState {
   _$_ProductsState(
-      {required final List<String> categories, required this.isLoading})
+      {required final List<String> categories,
+      required this.productsFetchSuccessOrFailure,
+      required this.isLoading})
       : _categories = categories;
 
   final List<String> _categories;
@@ -266,11 +400,14 @@ class _$_ProductsState implements _ProductsState {
   }
 
   @override
+  final Option<Either<Failure, List<ProductModel>>>
+      productsFetchSuccessOrFailure;
+  @override
   final bool isLoading;
 
   @override
   String toString() {
-    return 'ProductsState(categories: $categories, isLoading: $isLoading)';
+    return 'ProductsState(categories: $categories, productsFetchSuccessOrFailure: $productsFetchSuccessOrFailure, isLoading: $isLoading)';
   }
 
   @override
@@ -280,13 +417,20 @@ class _$_ProductsState implements _ProductsState {
             other is _$_ProductsState &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
+            (identical(other.productsFetchSuccessOrFailure,
+                    productsFetchSuccessOrFailure) ||
+                other.productsFetchSuccessOrFailure ==
+                    productsFetchSuccessOrFailure) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_categories), isLoading);
+      runtimeType,
+      const DeepCollectionEquality().hash(_categories),
+      productsFetchSuccessOrFailure,
+      isLoading);
 
   @JsonKey(ignore: true)
   @override
@@ -298,10 +442,14 @@ class _$_ProductsState implements _ProductsState {
 abstract class _ProductsState implements ProductsState {
   factory _ProductsState(
       {required final List<String> categories,
+      required final Option<Either<Failure, List<ProductModel>>>
+          productsFetchSuccessOrFailure,
       required final bool isLoading}) = _$_ProductsState;
 
   @override
   List<String> get categories;
+  @override
+  Option<Either<Failure, List<ProductModel>>> get productsFetchSuccessOrFailure;
   @override
   bool get isLoading;
   @override

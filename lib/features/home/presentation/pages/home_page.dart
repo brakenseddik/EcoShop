@@ -22,8 +22,10 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     context.read<ProductsBloc>().add(const OnFetchCategoriesEvent());
+    context.read<ProductsBloc>().add(const OnFetchProductsEvent());
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     final images = [
@@ -58,40 +60,101 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: ValuesManager.s16),
                   child: SmoothPageIndicator(
-                    controller: _controller, count: images.length,
+                    controller: _controller,
+                    count: images.length,
                     effect: const ExpandingDotsEffect(
-                        dotWidth: 8.0, dotHeight: 8.0,
-                        activeDotColor: ColorsManager.primaryColor),),
+                        dotWidth: 8.0,
+                        dotHeight: 8.0,
+                        activeDotColor: ColorsManager.primaryColor),
+                  ),
                 )
               ],
             ),
           ),
-          AppFeaturesWidget(),
+          const AppFeaturesWidget(),
           SliverToBoxAdapter(
-
             child: BlocProvider(
               create: (context) => locator<ProductsBloc>(),
               child: BlocBuilder<ProductsBloc, ProductsState>(
                 builder: (context, state) {
                   log(state.toString());
                   if (state.isLoading) {
-                    return const Center(child: CircularProgressIndicator(),);
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
                   }
-                  return SizedBox(
-                    height: 80,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.all(
-                          ValuesManager.defaultPadding),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: ActionChip(label: Text(state.categories[index])),
-                        );
-                      },
-                      itemCount: state.categories.length,
-                    ),
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0),
+                        child: Text(
+                          'Categories',
+                          style: context.textTheme.titleLarge,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 80,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.all(
+                              ValuesManager.defaultPadding),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: ActionChip(
+                                label: Text(state.categories[index]),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 16),
+                              ),
+                            );
+                          },
+                          itemCount: state.categories.length,
+                        ),
+                      ),
+                    ],
                   );
+                },
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: BlocProvider(
+              create: (context) => locator<ProductsBloc>(),
+              child: BlocBuilder<ProductsBloc, ProductsState>(
+                builder: (context, state) {
+                  if (state.isLoading) {
+                    return const SizedBox(
+                        child: Center(child: CircularProgressIndicator()));
+                  }
+                  return state.productsFetchSuccessOrFailure.fold(
+                      () => const SizedBox.shrink(),
+                      (a) => a.fold((l) => Text(l.toString()),
+                          (r) => GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 8.0,
+                              mainAxisSpacing: 8.0,
+                            ),
+                            itemCount: r.length,
+                            itemBuilder: (_,index){
+                            return Container(
+                              margin: EdgeInsets.all(16.0),
+                              decoration: BoxDecoration(
+                                color: ColorsManager.primaryColor,
+                                borderRadius: BorderRadius.circular(14)
+                              ),
+                              height: 120,
+                              width: 100,
+                              child: Column(
+                                children: [
+                                  Image.network(r[index].thumbnail, width: double.infinity, height: 90, fit: BoxFit.cover,),
+                                  Text(r[index].title)
+                                ],
+                              ),
+                            );
+                          } )));
                 },
               ),
             ),
